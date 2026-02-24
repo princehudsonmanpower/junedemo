@@ -11,10 +11,7 @@ export default function CTABanner() {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(245,166,35,0.3)] to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(245,166,35,0.3)] to-transparent" />
 
-            {/* Paw prints decoration */}
-            <div className="absolute left-8 top-1/2 -translate-y-1/2 text-5xl opacity-5 rotate-[-20deg] select-none pointer-events-none">🐾</div>
-            <div className="absolute right-8 top-1/3 text-7xl opacity-5 rotate-[20deg] select-none pointer-events-none">🐾</div>
-            <div className="absolute left-1/4 top-8 text-3xl opacity-5 select-none pointer-events-none">🐾</div>
+
 
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -24,7 +21,7 @@ export default function CTABanner() {
                 className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
             >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(245,166,35,0.1)] border border-[rgba(245,166,35,0.2)] text-[#F5A623] text-sm font-semibold mb-6">
-                    🐾 Your Next A-Player Is Waiting
+                    Your Next A-Player Is Waiting
                 </div>
 
                 <h2

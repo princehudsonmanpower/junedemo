@@ -3,25 +3,25 @@ import Link from "next/link";
 
 const features = [
     {
-        icon: "🧑‍💼",
+        icon: "✦",
         bg: "var(--amber-pale)",
         title: "Hands-on Mentorship",
         desc: "Aspiring Executive Assistants and HR Professionals get real mentorship, not just theory. Learn alongside experienced professionals on live projects.",
     },
     {
-        icon: "📄",
+        icon: "✦",
         bg: "var(--sage-pale)",
         title: "Expert Resume Reviews",
         desc: "Need a second pair of eyes? We provide expert guidance to ensure your resume reflects your true potential and stands out to recruiters.",
     },
     {
-        icon: "🌱",
+        icon: "✦",
         bg: "rgba(232,160,32,0.08)",
         title: "Zero Experience Needed",
         desc: "No prior experience required — just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
     },
     {
-        icon: "🆓",
+        icon: "✦",
         bg: "var(--sage-pale)",
         title: "Completely Free",
         desc: "Our internship program is 100% free and open to anyone eager to gain real-world exposure and kickstart their career.",

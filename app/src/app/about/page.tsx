@@ -98,10 +98,10 @@ export default function AboutPage() {
                         </div>
                         <div className="mission-values-grid">
                             {[
-                                { icon: "🐾", title: "Loyalty", desc: "We stand by our clients and candidates through every step." },
-                                { icon: "🎯", title: "Consistency", desc: "Reliable, predictable, high-quality results every time." },
-                                { icon: "🤝", title: "Partnership", desc: "We're not vendors — we're your extended team." },
-                                { icon: "💡", title: "Growth", desc: "We help businesses scale and individuals thrive." },
+                                { icon: "✦", title: "Loyalty", desc: "We stand by our clients and candidates through every step." },
+                                { icon: "✦", title: "Consistency", desc: "Reliable, predictable, high-quality results every time." },
+                                { icon: "✦", title: "Partnership", desc: "We're not vendors — we're your extended team." },
+                                { icon: "✦", title: "Growth", desc: "We help businesses scale and individuals thrive." },
                             ].map((v) => (
                                 <div key={v.title} className="mission-value-card">
                                     <span className="mission-value-icon">{v.icon}</span>

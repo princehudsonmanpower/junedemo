@@ -4,7 +4,7 @@ import Link from "next/link";
 const services = [
     {
         id: "talent-acquisition",
-        icon: "🎯",
+        icon: "✦",
         iconClass: "service-icon-amber",
         tag: "For Employers",
         tagClass: "tag-amber",
@@ -21,7 +21,7 @@ const services = [
     },
     {
         id: "hr-retainer",
-        icon: "🤝",
+        icon: "✦",
         iconClass: "service-icon-sage",
         tag: "Partnership",
         tagClass: "tag-sage",

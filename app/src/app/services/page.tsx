@@ -31,25 +31,25 @@ export const metadata: Metadata = {
 const processSteps = [
     {
         num: "01",
-        icon: "💬",
+        icon: "✦",
         title: "Tell Us Your Needs",
         desc: "Share the role, requirements, and culture fit you're looking for. We take it from there.",
     },
     {
         num: "02",
-        icon: "🔍",
+        icon: "✦",
         title: "We Source & Screen",
         desc: "Our team reviews hundreds of candidates. We reject 95% — so you only meet the best.",
     },
     {
         num: "03",
-        icon: "🤝",
+        icon: "✦",
         title: "You Interview Top 3–5",
         desc: "Meet a curated shortlist of pre-qualified, vetted candidates on your schedule.",
     },
     {
         num: "04",
-        icon: "🚀",
+        icon: "✦",
         title: "Hire & Onboard Fast",
         desc: "Choose your hire, sign off, and onboard in days — not months. We handle the rest.",
     },

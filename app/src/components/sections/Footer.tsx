@@ -71,8 +71,8 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <span>© {year} JuneHires. All rights reserved.</span>
-                    <span style={{ opacity: 0.4 }}>
-                        Made with 🐾 by Rashmi
+                    <span>
+                        Made with ♥ by Rashmi
                     </span>
                     <span>
                         <a href="mailto:recruiter@junehires.com">recruiter@junehires.com</a>

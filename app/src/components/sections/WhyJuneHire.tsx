@@ -2,10 +2,10 @@
 import Link from "next/link";
 
 const values = [
-    { emoji: "🐾", label: "Loyalty" },
-    { emoji: "🎯", label: "Consistency" },
-    { emoji: "🤝", label: "Partnership" },
-    { emoji: "💡", label: "Growth" },
+    { emoji: "✦", label: "Loyalty" },
+    { emoji: "✦", label: "Consistency" },
+    { emoji: "✦", label: "Partnership" },
+    { emoji: "✦", label: "Growth" },
 ];
 
 export default function WhyJuneHires() {

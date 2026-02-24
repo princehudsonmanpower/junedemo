@@ -39,7 +39,7 @@ export default function PageHero({ eyebrow, title, titleHighlight, subtitle, pri
             <div className="container" style={{ position: "relative", zIndex: 1 }}>
                 <div className="page-hero-content">
                     <div className="hero-eyebrow page-hero-anim">
-                        🐾 &nbsp;{eyebrow}
+                        {eyebrow}
                     </div>
                     <h1 className="hero-h1 page-hero-anim">
                         {title}

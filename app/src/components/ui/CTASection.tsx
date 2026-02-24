@@ -20,9 +20,7 @@ export default function CTASection({
         <section className="cta-section">
             <div className="container">
                 <div className="cta-inner">
-                    {/* Decorative paw prints */}
-                    <div className="cta-paw cta-paw-1">🐾</div>
-                    <div className="cta-paw cta-paw-2">🐾</div>
+
 
                     <span className="eyebrow" style={{ color: "var(--amber-light)", justifyContent: "center" }}>
                         <span className="eyebrow-dot" style={{ background: "var(--amber-light)" }} />

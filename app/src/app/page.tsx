@@ -46,25 +46,25 @@ export default function HomePage() {
           <div className="highlights-grid">
             {[
               {
-                icon: "🎯",
+                icon: "✦",
                 title: "Talent Acquisition",
                 desc: "End-to-end recruitment management to find your perfect hire.",
                 link: "/services",
               },
               {
-                icon: "🤝",
+                icon: "✦",
                 title: "HR Retainer",
                 desc: "Dedicated HR partnership to handle your people strategy.",
                 link: "/services",
               },
               {
-                icon: "🌱",
+                icon: "✦",
                 title: "Free Internships",
                 desc: "Hands-on learning programs for aspiring EAs and HR pros.",
                 link: "/internships",
               },
               {
-                icon: "💼",
+                icon: "✦",
                 title: "Job Board",
                 desc: "Browse current openings and find your next career move.",
                 link: "/careers",

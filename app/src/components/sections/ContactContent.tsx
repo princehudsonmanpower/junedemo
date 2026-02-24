@@ -50,7 +50,7 @@ export default function ContactContent() {
                                 </div>
 
                                 <div className="contact-card">
-                                    <div className="contact-card-icon">💼</div>
+                                    <div className="contact-card-icon">✦</div>
                                     <div>
                                         <h4>LinkedIn</h4>
                                         <a href="https://www.linkedin.com/company/junehires" target="_blank" rel="noopener noreferrer" style={{ color: "var(--amber)", textDecoration: "none", fontSize: 15 }}>
@@ -60,7 +60,7 @@ export default function ContactContent() {
                                 </div>
 
                                 <div className="contact-card">
-                                    <div className="contact-card-icon">📍</div>
+                                    <div className="contact-card-icon">✦</div>
                                     <div>
                                         <h4>Location</h4>
                                         <p style={{ fontSize: 15, color: "var(--text-mid)" }}>Remote-First, Global</p>
@@ -82,7 +82,7 @@ export default function ContactContent() {
                         {/* Right: Quick action cards */}
                         <div className="contact-actions">
                             <div className="contact-action-card" id="contact-hiring">
-                                <div className="contact-action-icon">🎯</div>
+                                <div className="contact-action-icon">✦</div>
                                 <h3>I&apos;m Looking to Hire</h3>
                                 <p>Tell us about the role you need filled. We&apos;ll present top candidates within 5–10 days.</p>
                                 <a href="mailto:recruiter@junehires.com?subject=Hiring Inquiry" className="btn btn-primary" style={{ marginTop: 16, width: "100%", justifyContent: "center" }}>
@@ -94,7 +94,7 @@ export default function ContactContent() {
                             </div>
 
                             <div className="contact-action-card" id="contact-job-seeker">
-                                <div className="contact-action-icon">💼</div>
+                                <div className="contact-action-icon">✦</div>
                                 <h3>I&apos;m Looking for a Job</h3>
                                 <p>Browse our open positions or send a speculative application with your CV.</p>
                                 <Link href="/careers" className="btn btn-outline" style={{ marginTop: 16, width: "100%", justifyContent: "center" }}>
@@ -103,7 +103,7 @@ export default function ContactContent() {
                             </div>
 
                             <div className="contact-action-card" id="contact-intern">
-                                <div className="contact-action-icon">🌱</div>
+                                <div className="contact-action-icon">✦</div>
                                 <h3>I Want to Learn &amp; Grow</h3>
                                 <p>Apply for our free internship program. No experience needed — just eagerness.</p>
                                 <Link href="/internships" className="btn btn-outline" style={{ marginTop: 16, width: "100%", justifyContent: "center" }}>

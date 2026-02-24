@@ -30,22 +30,22 @@ export const metadata: Metadata = {
 
 const benefits = [
     {
-        icon: "📋",
+        icon: "✦",
         title: "Real Project Experience",
         desc: "Work on live tasks — scheduling, communications, research, and HR operations. Not simulated exercises.",
     },
     {
-        icon: "🏅",
+        icon: "✦",
         title: "Certificate of Completion",
         desc: "Earn a certificate to showcase on your resume and LinkedIn profile upon program completion.",
     },
     {
-        icon: "🌐",
+        icon: "✦",
         title: "100% Remote",
         desc: "Participate from anywhere in the world. All you need is a laptop and a willingness to learn.",
     },
     {
-        icon: "🤝",
+        icon: "✦",
         title: "Network & Connections",
         desc: "Connect with industry professionals and fellow interns. Build a network that lasts beyond the program.",
     },

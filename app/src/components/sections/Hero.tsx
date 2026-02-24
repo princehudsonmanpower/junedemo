@@ -38,7 +38,7 @@ export default function Hero() {
                     {/* ── LEFT: Text ── */}
                     <div>
                         <div className="hero-eyebrow hero-anim">
-                            🐾 &nbsp;People-First. Growth-Focused.
+                            People-First. Growth-Focused.
                         </div>
 
                         <h1 className="hero-h1 hero-anim" ref={h1Ref}>
@@ -67,9 +67,9 @@ export default function Hero() {
                         {/* Trust chips */}
                         <div className="hero-anim" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 36 }}>
                             {[
-                                { icon: "💼", text: "End-to-end HR" },
-                                { icon: "🎯", text: "Talent Acquisition" },
-                                { icon: "📋", text: "Free Internships" },
+                                { icon: "✦", text: "End-to-end HR" },
+                                { icon: "✦", text: "Talent Acquisition" },
+                                { icon: "✦", text: "Free Internships" },
                             ].map((chip) => (
                                 <span
                                     key={chip.text}
@@ -113,7 +113,7 @@ export default function Hero() {
 
                         <div className="hero-float-card" style={{ bottom: 56, right: -20 }}>
                             <p>Founded with love for</p>
-                            <strong style={{ fontSize: 16 }}>June 🐾</strong>
+                            <strong style={{ fontSize: 16 }}>June</strong>
                         </div>
                     </div>
                 </div>
