@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const values = [
     { emoji: "🐾", label: "Loyalty" },
@@ -92,12 +93,12 @@ export default function WhyJuneHires() {
                         </div>
 
                         <div style={{ display: "flex", gap: 12, marginTop: 36, flexWrap: "wrap" }}>
-                            <a href="#contact" className="btn btn-primary" id="why-hire-cta">
+                            <Link href="/contact" className="btn btn-primary" id="why-hire-cta">
                                 Work with Us
-                            </a>
-                            <a href="#testimonials" className="btn btn-outline" id="why-stories-cta">
+                            </Link>
+                            <Link href="/testimonials" className="btn btn-outline" id="why-stories-cta">
                                 Read Success Stories
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

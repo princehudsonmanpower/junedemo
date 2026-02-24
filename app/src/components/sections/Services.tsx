@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const services = [
     {
@@ -16,7 +17,7 @@ const services = [
             "Culture-fit assessments",
             "Seamless onboarding support",
         ],
-        cta: { label: "Start Hiring", href: "#contact" },
+        cta: { label: "Start Hiring", href: "/contact" },
     },
     {
         id: "hr-retainer",
@@ -33,7 +34,7 @@ const services = [
             "Performance management frameworks",
             "Employee engagement strategies",
         ],
-        cta: { label: "Explore Retainer", href: "#contact" },
+        cta: { label: "Explore Retainer", href: "/contact" },
     },
 ];
 
@@ -73,7 +74,7 @@ export default function Services() {
                                     <li key={f}>{f}</li>
                                 ))}
                             </ul>
-                            <a
+                            <Link
                                 href={s.cta.href}
                                 className="btn btn-primary"
                                 id={`service-cta-${s.id}`}
@@ -83,7 +84,7 @@ export default function Services() {
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </div>

@@ -1,23 +1,31 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-    { label: "For Employers", href: "#services" },
-    { label: "Internships", href: "#hub" },
-    { label: "Job Board", href: "#jobs" },
-    { label: "Our Story", href: "#why" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "Services", href: "/services" },
+    { label: "Internships", href: "/internships" },
+    { label: "Careers", href: "/careers" },
+    { label: "About", href: "/about" },
+    { label: "Testimonials", href: "/testimonials" },
 ];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    // Close mobile menu on route change
+    useEffect(() => {
+        setMobileOpen(false);
+    }, [pathname]);
 
     return (
         <>
@@ -28,16 +36,21 @@ export default function Navbar() {
                 <div className="container">
                     <div className="nav-inner">
                         {/* Logo */}
-                        <a href="/" className="nav-logo" id="nav-logo">
+                        <Link href="/" className="nav-logo" id="nav-logo">
                             <div className="nav-logo-icon">🐾</div>
                             <span className="nav-logo-text">JuneHires</span>
-                        </a>
+                        </Link>
 
                         {/* Desktop links */}
                         <ul className="nav-links">
                             {navLinks.map((l) => (
                                 <li key={l.label}>
-                                    <a href={l.href}>{l.label}</a>
+                                    <Link
+                                        href={l.href}
+                                        className={pathname === l.href ? "nav-link-active" : ""}
+                                    >
+                                        {l.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -47,8 +60,8 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <a href="#jobs" className="btn btn-outline" id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>Find a Job</a>
-                            <a href="#contact" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Hire with Us</a>
+                            <Link href="/careers" className={scrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>Find a Job</Link>
+                            <Link href="/contact" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Hire with Us</Link>
                         </div>
 
                         {/* Hamburger */}
@@ -59,12 +72,13 @@ export default function Navbar() {
                             style={{
                                 display: "none",
                                 background: "none",
-                                border: "1.5px solid rgba(28,28,32,0.15)",
+                                border: scrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
                                 borderRadius: 10,
                                 padding: "8px 10px",
                                 cursor: "pointer",
                                 fontSize: 18,
-                                color: "var(--charcoal)",
+                                color: scrolled ? "var(--charcoal)" : "#fff",
+                                transition: "all 0.35s ease",
                             }}
                             className="hamburger-btn"
                         >
@@ -111,7 +125,7 @@ export default function Navbar() {
                         </div>
                         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                             {navLinks.map((l) => (
-                                <a
+                                <Link
                                     key={l.label}
                                     href={l.href}
                                     onClick={() => setMobileOpen(false)}
@@ -120,18 +134,19 @@ export default function Navbar() {
                                         borderRadius: 12,
                                         fontSize: 16,
                                         fontWeight: 500,
-                                        color: "var(--text-mid)",
+                                        color: pathname === l.href ? "var(--amber)" : "var(--text-mid)",
                                         textDecoration: "none",
                                         transition: "background 0.2s",
+                                        background: pathname === l.href ? "var(--amber-pale)" : "transparent",
                                     }}
                                 >
                                     {l.label}
-                                </a>
+                                </Link>
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <a href="#jobs" className="btn btn-outline" style={{ justifyContent: "center" }}>Find a Job</a>
-                            <a href="#contact" className="btn btn-primary" style={{ justifyContent: "center" }}>Hire with Us</a>
+                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>Find a Job</Link>
+                            <Link href="/contact" className="btn btn-primary" style={{ justifyContent: "center" }}>Hire with Us</Link>
                         </div>
                     </div>
                 </div>

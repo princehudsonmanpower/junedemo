@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const testimonials = [
     {
@@ -61,7 +62,13 @@ function Stars({ count }: { count: number }) {
     );
 }
 
-export default function Testimonials() {
+interface TestimonialsProps {
+    limit?: number;
+}
+
+export default function Testimonials({ limit }: TestimonialsProps) {
+    const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
+
     return (
         <section id="testimonials" className="testimonials-section">
             <div className="container">
@@ -84,7 +91,7 @@ export default function Testimonials() {
 
                 {/* Grid */}
                 <div className="testimonials-grid">
-                    {testimonials.map((t) => (
+                    {displayTestimonials.map((t) => (
                         <article key={t.id} className="testimonial-card" id={`testimonial-${t.id}`}>
                             <Stars count={t.stars} />
                             <p className="testimonial-text">&ldquo;{t.text}&rdquo;</p>
@@ -98,6 +105,18 @@ export default function Testimonials() {
                         </article>
                     ))}
                 </div>
+
+                {/* Show "View All" only when limited */}
+                {limit && limit < testimonials.length && (
+                    <div style={{ textAlign: "center", marginTop: 40 }}>
+                        <Link href="/testimonials" className="btn btn-outline" id="view-all-testimonials">
+                            View All Success Stories
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </Link>
+                    </div>
+                )}
 
             </div>
         </section>

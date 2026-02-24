@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const features = [
     {
@@ -94,15 +95,15 @@ export default function Hub() {
                         </div>
 
                         <div style={{ marginTop: 40, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                            <a href="#contact" className="btn btn-primary" id="hub-apply-cta">
+                            <Link href="/contact" className="btn btn-primary" id="hub-apply-cta">
                                 Apply for Internship
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </a>
-                            <a href="#contact" className="btn btn-outline" id="hub-resume-cta">
+                            </Link>
+                            <Link href="/contact" className="btn btn-outline" id="hub-resume-cta">
                                 Get Resume Reviewed
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

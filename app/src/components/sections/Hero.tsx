@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Hero() {
     const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -52,15 +53,15 @@ export default function Hero() {
                         </p>
 
                         <div className="hero-ctas hero-anim">
-                            <a href="#contact" className="btn btn-primary" id="hero-hire-cta">
+                            <Link href="/contact" className="btn btn-primary" id="hero-hire-cta">
                                 Hire with Us
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </a>
-                            <a href="#jobs" className="btn btn-ghost-dark" id="hero-jobs-cta">
+                            </Link>
+                            <Link href="/careers" className="btn btn-ghost-dark" id="hero-jobs-cta">
                                 Find a Job
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Trust chips */}

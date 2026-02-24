@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: "JuneHires | People-First Hiring & HR Solutions",
+  metadataBase: new URL("https://www.junehires.com"),
+  title: {
+    default: "JuneHires | People-First Hiring & HR Solutions",
+    template: "%s | JuneHires",
+  },
   description:
     "JuneHires provides end-to-end human resource solutions and talent acquisition designed to help businesses scale and individuals thrive. Free internships, expert resume reviews, and dedicated HR partnership.",
   icons: {
-    icon: [
-      { url: "/junehires.jpg", type: "image/jpeg" },
-    ],
+    icon: [{ url: "/junehires.jpg", type: "image/jpeg" }],
     apple: "/junehires.jpg",
     shortcut: "/junehires.jpg",
   },
@@ -62,6 +66,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: "https://www.junehires.com",
+  },
 };
 
 const jsonLd = {
@@ -100,7 +107,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

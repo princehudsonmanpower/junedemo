@@ -1,10 +1,11 @@
 "use client";
+import Link from "next/link";
 
 export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="footer" id="contact">
+        <footer className="footer" id="footer">
             <div className="container">
                 <div className="footer-top">
 
@@ -47,11 +48,11 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#services">Talent Acquisition</a></li>
-                            <li><a href="#services">HR Retainer</a></li>
-                            <li><a href="#hub">Internship Program</a></li>
-                            <li><a href="#hub">Resume Reviews</a></li>
-                            <li><a href="#jobs">Job Board</a></li>
+                            <li><Link href="/services">Talent Acquisition</Link></li>
+                            <li><Link href="/services">HR Retainer</Link></li>
+                            <li><Link href="/internships">Internship Program</Link></li>
+                            <li><Link href="/internships">Resume Reviews</Link></li>
+                            <li><Link href="/careers">Job Board</Link></li>
                         </ul>
                     </div>
 
@@ -59,9 +60,9 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#why">Our Story</a></li>
-                            <li><a href="#testimonials">Success Stories</a></li>
-                            <li><a href="mailto:recruiter@junehires.com">Contact Us</a></li>
+                            <li><Link href="/about">Our Story</Link></li>
+                            <li><Link href="/testimonials">Success Stories</Link></li>
+                            <li><Link href="/contact">Contact Us</Link></li>
                             <li><a href="https://www.linkedin.com/company/junehires" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                         </ul>
                     </div>
