@@ -17,7 +17,7 @@ const services = [
             "Culture-fit assessments",
             "Seamless onboarding support",
         ],
-        cta: { label: "Start Hiring", href: "/contact" },
+        cta: { label: "Start Hiring", href: "/services#how-it-works" },
     },
     {
         id: "hr-retainer",
@@ -34,7 +34,7 @@ const services = [
             "Performance management frameworks",
             "Employee engagement strategies",
         ],
-        cta: { label: "Explore Retainer", href: "/contact" },
+        cta: { label: "Explore Retainer", href: "/services#how-it-works" },
     },
 ];
 

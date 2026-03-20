@@ -12,22 +12,14 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="footer-brand">
                         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                            <div style={{
-                                width: 36, height: 36, borderRadius: 10,
-                                background: "var(--amber)",
-                                display: "flex", alignItems: "center", justifyContent: "center",
-                                fontSize: 18,
-                            }}>🐾</div>
-                            <h3 style={{ margin: 0, fontFamily: "'Playfair Display', serif", fontSize: 22, color: "#fff" }}>
-                                JuneHires
-                            </h3>
+                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "48px", width: "auto" }} />
                         </div>
                         <p>
                             End-to-end human resource solutions and talent acquisition — built
                             on loyalty, consistency, and a genuine love for people.
                         </p>
                         <p style={{ marginTop: 16 }}>
-                            Named after June. Built for you.
+                            Built for you.
                         </p>
                         <a
                             href="mailto:recruiter@junehires.com"

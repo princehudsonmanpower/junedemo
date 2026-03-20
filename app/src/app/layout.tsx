@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   description:
     "JuneHires provides end-to-end human resource solutions and talent acquisition designed to help businesses scale and individuals thrive. Free internships, expert resume reviews, and dedicated HR partnership.",
   icons: {
-    icon: [{ url: "/junehires.jpg", type: "image/jpeg" }],
-    apple: "/junehires.jpg",
-    shortcut: "/junehires.jpg",
+    icon: [{ url: "/JuneHires_logo.png", type: "image/png" }],
+    apple: "/JuneHires_logo.png",
+    shortcut: "/JuneHires_logo.png",
   },
   keywords: [
     "HR solutions India",
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     siteName: "JuneHires",
     title: "JuneHires | People-First Hiring & HR Solutions",
     description:
-      "End-to-end HR and talent acquisition. Free internship program for aspiring EAs and HR professionals. Named after June. Built for you.",
+      "End-to-end HR and talent acquisition. Free internship program for aspiring EAs and HR professionals. Built for you.",
     images: [
       {
-        url: "/junehires.jpg",
+        url: "/JuneHires_logo.png",
         width: 1200,
         height: 630,
         alt: "JuneHires — People-First Hiring & HR Solutions",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "JuneHires | People-First Hiring & HR Solutions",
     description:
       "JuneHires provides end-to-end HR and talent acquisition. Free internship program for aspiring EAs and HR professionals.",
-    images: ["/junehires.jpg"],
+    images: ["/JuneHires_logo.png"],
   },
   robots: {
     index: true,
@@ -76,7 +76,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "JuneHires",
   url: "https://www.junehires.com",
-  logo: "https://www.junehires.com/junehires.jpg",
+  logo: "https://www.junehires.com/JuneHires_logo.png",
   description:
     "JuneHires provides people-first HR solutions and talent acquisition services, helping businesses scale and individuals thrive.",
   foundingDate: "2024",

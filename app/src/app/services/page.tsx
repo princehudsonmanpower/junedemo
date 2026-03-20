@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         description:
             "End-to-end recruitment and dedicated HR partnership. From sourcing to onboarding, we handle the people side so you can focus on growth.",
         url: "https://www.junehires.com/services",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "JuneHires Services" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "JuneHires Services" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/services",
@@ -70,7 +70,7 @@ export default function ServicesPage() {
             <Services />
 
             {/* How It Works */}
-            <section className="how-it-works-section">
+            <section className="how-it-works-section" id="how-it-works">
                 <div className="container">
                     <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
                         <span className="eyebrow" style={{ justifyContent: "center" }}>

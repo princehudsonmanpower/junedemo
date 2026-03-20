@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         description:
             "Reach out to JuneHires for hiring, internships, or career guidance. We read every message.",
         url: "https://www.junehires.com/contact",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "Contact JuneHires" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "Contact JuneHires" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/contact",

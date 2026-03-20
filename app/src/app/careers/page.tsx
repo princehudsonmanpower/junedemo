@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         description:
             "Find your next career move at JuneHires. Remote-first roles in EA, HR, and talent coordination.",
         url: "https://www.junehires.com/careers",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "JuneHires Careers" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "JuneHires Careers" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/careers",

@@ -37,15 +37,7 @@ export default function Navbar() {
                     <div className="nav-inner">
                         {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
-                            <div className="nav-logo-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <line x1="12" y1="12" x2="12" y2="12" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-                                    <path d="M2 13h20" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>
-                                </svg>
-                            </div>
-                            <span className="nav-logo-text">JuneHires</span>
+                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "40px", width: "auto" }} />
                         </Link>
 
                         {/* Desktop links */}
@@ -124,7 +116,7 @@ export default function Navbar() {
                         }}
                     >
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <span className="nav-logo-text">JuneHires</span>
+                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "36px", width: "auto" }} />
                             <button
                                 onClick={() => setMobileOpen(false)}
                                 style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "var(--text-mid)" }}

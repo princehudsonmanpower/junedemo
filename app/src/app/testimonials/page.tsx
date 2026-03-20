@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         description:
             "Employers who found their people. Candidates who found their path. Read their stories.",
         url: "https://www.junehires.com/testimonials",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "JuneHires Testimonials" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "JuneHires Testimonials" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/testimonials",

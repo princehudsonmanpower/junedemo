@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         description:
             "People-first hiring done right. Learn about JuneHires' mission, values, and commitment to every client and candidate.",
         url: "https://www.junehires.com/about",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "About JuneHires" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "About JuneHires" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/about",
@@ -65,16 +65,9 @@ const faqs = [
 export default function AboutPage() {
     return (
         <>
-            <PageHero
-                eyebrow="Our Story & Values"
-                title="Why JuneHires?"
-                titleHighlight="Built for Excellence."
-                subtitle="JuneHires is more than a hiring agency. It's a commitment — that every person matters, every detail counts, and every partnership delivers results."
-                primaryCta={{ label: "Work with Us", href: "/contact" }}
-                secondaryCta={{ label: "Read Success Stories", href: "/testimonials" }}
-            />
-
+        <div style={{ paddingTop: '80px' }}>
             <WhyJuneHire />
+        </div>
 
             {/* Mission section */}
             <section className="mission-section">
