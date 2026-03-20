@@ -70,12 +70,12 @@ export default function InternshipsPage() {
     return (
         <>
             <PageHero
-                eyebrow="Internship & Guidance Hub"
-                title="Learn by Doing."
-                titleHighlight="Grow by Experiencing."
-                subtitle="Our internship program is completely free and designed for those eager to learn on the job. No prior experience needed — just a ready-to-learn attitude."
-                primaryCta={{ label: "Apply for Internship", href: "/contact" }}
-                secondaryCta={{ label: "Get Resume Reviewed", href: "/contact" }}
+                eyebrow="Internship with JuneHires"
+                title="Launch Your Career"
+                titleHighlight="with JuneHires."
+                subtitle="Our free internship program is designed for aspiring HR professionals and Executive Assistants. No prior experience needed — just bring your drive and ambition."
+                primaryCta={{ label: "Apply for Internship", href: "mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires" }}
+                secondaryCta={{ label: "Get Resume Reviewed", href: "mailto:recruiter@junehires.com?subject=Resume%20Review%20Request" }}
             />
 
             <Hub />

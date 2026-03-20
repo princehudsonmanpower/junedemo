@@ -6,7 +6,7 @@ import CTASection from "@/components/ui/CTASection";
 export const metadata: Metadata = {
     title: "About Us — Our Story & Values",
     description:
-        "JuneHires is named after our founder Rashmi's dog, June. We believe in loyalty, consistency, and the joy of a perfect partnership. Learn about our story, values, and mission.",
+        "JuneHires is a people-first hiring agency dedicated to connecting great talent with great companies. Learn about our mission, values, and the team behind every placement.",
     keywords: [
         "about JuneHires",
         "JuneHires story",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "About Us — Our Story & Values | JuneHires",
         description:
-            "Named after June, our beloved dog. Built on loyalty, consistency, and a genuine love for people. Learn our story.",
+            "People-first hiring done right. Learn about JuneHires' mission, values, and commitment to every client and candidate.",
         url: "https://www.junehires.com/about",
         images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "About JuneHires" }],
     },
@@ -68,8 +68,8 @@ export default function AboutPage() {
             <PageHero
                 eyebrow="Our Story & Values"
                 title="Why JuneHires?"
-                titleHighlight="Named after June."
-                subtitle="JuneHires is more than a hiring agency. It's a promise — that every person matters, every detail counts, and every partnership is personal."
+                titleHighlight="Built for Excellence."
+                subtitle="JuneHires is more than a hiring agency. It's a commitment — that every person matters, every detail counts, and every partnership delivers results."
                 primaryCta={{ label: "Work with Us", href: "/contact" }}
                 secondaryCta={{ label: "Read Success Stories", href: "/testimonials" }}
             />

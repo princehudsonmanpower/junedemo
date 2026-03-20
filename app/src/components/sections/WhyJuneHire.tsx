@@ -22,18 +22,18 @@ export default function WhyJuneHires() {
                                 src="/rashmi.jpg"
                                 alt="Rashmi — Founder of JuneHires"
                             />
-                            {/* Warm overlay at bottom */}
+                            {/* Subtle blue overlay at bottom */}
                             <div style={{
                                 position: "absolute", bottom: 0, left: 0, right: 0,
                                 height: "35%",
-                                background: "linear-gradient(to top, rgba(232,160,32,0.15), transparent)",
+                                background: "linear-gradient(to top, rgba(10,102,194,0.15), transparent)",
                             }} />
                         </div>
 
-                        {/* Floating paw badge */}
+                        {/* Credibility badge */}
                         <div className="why-photo-badge">
-                            <span className="paw">🐾</span>
-                            <p>Named after June,<br />our beloved dog</p>
+                            <span style={{ fontSize: 20 }}>🏆</span>
+                            <p>500+ Successful<br />Placements</p>
                         </div>
 
                         {/* Decorative element */}
@@ -41,7 +41,7 @@ export default function WhyJuneHires() {
                             position: "absolute", top: -20, left: -20,
                             width: 80, height: 80,
                             borderRadius: 20,
-                            background: "var(--amber-pale)",
+                            background: "var(--blue-pale)",
                             border: "2px solid var(--border-warm)",
                             zIndex: -1,
                         }} />
@@ -55,13 +55,13 @@ export default function WhyJuneHires() {
                         </span>
 
                         <h2 className="section-title">
-                            Why <span style={{ color: "var(--amber)" }}>JuneHires?</span>
+                            Why <span style={{ color: "var(--blue)" }}>JuneHires?</span>
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 24 }}>
-                            JuneHires is named after my dog, <strong>June</strong>. To me, June represents
-                            loyalty, consistency, and the joy of a perfect partnership. These are the exact
-                            values we bring to every client and candidate we serve.
+                            JuneHires was built on one conviction: that hiring done right changes lives.
+                            We combine rigorous talent acquisition with a genuinely personal touch — because
+                            every placement is a partnership, not just a transaction.
                         </p>
 
                         {/* Values pills */}

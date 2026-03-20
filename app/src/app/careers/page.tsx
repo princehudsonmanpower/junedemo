@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import Jobs from "@/components/sections/Jobs";
 import CTASection from "@/components/ui/CTASection";
 
@@ -31,14 +30,35 @@ export const metadata: Metadata = {
 export default function CareersPage() {
     return (
         <>
-            <PageHero
-                eyebrow="Careers at JuneHires"
-                title="Find your next"
-                titleHighlight="career move."
-                subtitle="We value attention to detail. Every application step matters — and getting it right is your first chance to impress us."
-                primaryCta={{ label: "View Openings Below", href: "#openings" }}
-                secondaryCta={{ label: "Apply for Internship", href: "/internships" }}
-            />
+            {/* Slim careers header — jobs shown directly */}
+            <section style={{
+                paddingTop: "120px",
+                paddingBottom: "48px",
+                background: "var(--charcoal)",
+                textAlign: "center",
+            }}>
+                <div className="container">
+                    <span className="eyebrow" style={{ justifyContent: "center", color: "var(--blue-light)" }}>
+                        <span className="eyebrow-dot" style={{ background: "var(--blue-light)" }} />
+                        Current Openings
+                    </span>
+                    <h1 style={{
+                        fontSize: "clamp(32px, 5vw, 56px)",
+                        fontWeight: 800,
+                        color: "#fff",
+                        lineHeight: 1.15,
+                        marginTop: 12,
+                        marginBottom: 16,
+                        fontFamily: "'Playfair Display', Georgia, serif",
+                    }}>
+                        Find Your Next<br />
+                        <span style={{ color: "var(--blue-light)" }}>Career Move.</span>
+                    </h1>
+                    <p style={{ fontSize: 17, color: "rgba(255,255,255,0.65)", maxWidth: 540, margin: "0 auto" }}>
+                        Browse open roles at JuneHires and apply directly. We’re always looking for talented HR professionals, EAs, and coordinators.
+                    </p>
+                </div>
+            </section>
 
             <Jobs />
 

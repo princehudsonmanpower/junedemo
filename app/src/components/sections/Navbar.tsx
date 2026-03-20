@@ -37,7 +37,14 @@ export default function Navbar() {
                     <div className="nav-inner">
                         {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
-                            <div className="nav-logo-icon">🐾</div>
+                            <div className="nav-logo-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <line x1="12" y1="12" x2="12" y2="12" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+                                    <path d="M2 13h20" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>
+                                </svg>
+                            </div>
                             <span className="nav-logo-text">JuneHires</span>
                         </Link>
 
@@ -60,8 +67,8 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/careers" className={scrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>Find a Job</Link>
-                            <Link href="/contact" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Hire with Us</Link>
+                            <Link href="/careers" className={scrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
+                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>For Employers</Link>
                         </div>
 
                         {/* Hamburger */}
@@ -134,10 +141,10 @@ export default function Navbar() {
                                         borderRadius: 12,
                                         fontSize: 16,
                                         fontWeight: 500,
-                                        color: pathname === l.href ? "var(--amber)" : "var(--text-mid)",
+                                        color: pathname === l.href ? "var(--blue)" : "var(--text-mid)",
                                         textDecoration: "none",
                                         transition: "background 0.2s",
-                                        background: pathname === l.href ? "var(--amber-pale)" : "transparent",
+                                        background: pathname === l.href ? "var(--blue-pale)" : "transparent",
                                     }}
                                 >
                                     {l.label}
@@ -145,8 +152,8 @@ export default function Navbar() {
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>Find a Job</Link>
-                            <Link href="/contact" className="btn btn-primary" style={{ justifyContent: "center" }}>Hire with Us</Link>
+                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
+                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>For Employers</Link>
                         </div>
                     </div>
                 </div>

@@ -22,8 +22,8 @@ export default function Hero() {
     return (
         <section id="home" className="hero-section">
             {/* bgblobs */}
-            <div className="hero-bg-blob-1" />
-            <div className="hero-bg-blob-2" />
+            <div className="hero-bg-blob-1" style={{ background: "rgba(10, 102, 194, 0.10)" }} />
+            <div className="hero-bg-blob-2" style={{ background: "rgba(46, 128, 216, 0.07)" }} />
 
             {/* Subtle grid overlay */}
             <div style={{
@@ -37,7 +37,7 @@ export default function Hero() {
 
                     {/* ── LEFT: Text ── */}
                     <div>
-                        <div className="hero-eyebrow hero-anim">
+                        <div className="hero-eyebrow hero-anim" style={{ background: "rgba(10,102,194,0.12)", border: "1px solid rgba(10,102,194,0.22)", color: "#7EC8FF" }}>
                             People-First. Growth-Focused.
                         </div>
 
@@ -53,14 +53,14 @@ export default function Hero() {
                         </p>
 
                         <div className="hero-ctas hero-anim">
-                            <Link href="/contact" className="btn btn-primary" id="hero-hire-cta">
-                                Hire with Us
+                            <Link href="/services" className="btn btn-primary" id="hero-hire-cta">
+                                For Employers
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </Link>
                             <Link href="/careers" className="btn btn-ghost-dark" id="hero-jobs-cta">
-                                Find a Job
+                                For Candidates
                             </Link>
                         </div>
 
@@ -88,32 +88,32 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* ── RIGHT: Dog visual ── */}
+                    {/* ── RIGHT: Professional visual ── */}
                     <div className="hero-visual">
                         <div className="hero-img-wrap float-anim">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=700&q=85&fit=crop&crop=faces"
-                                alt="June — the golden retriever mascot of JuneHires"
+                                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=85&fit=crop&crop=faces"
+                                alt="Professional team collaboration at JuneHires"
                                 loading="eager"
                             />
-                            {/* Warm amber overlay at bottom */}
+                            {/* Subtle blue overlay at bottom */}
                             <div style={{
                                 position: "absolute", bottom: 0, left: 0, right: 0,
                                 height: "40%",
-                                background: "linear-gradient(to top, rgba(232,160,32,0.25), transparent)",
+                                background: "linear-gradient(to top, rgba(10,102,194,0.20), transparent)",
                             }} />
                         </div>
 
                         {/* Floating stats cards */}
                         <div className="hero-float-card" style={{ top: 32, left: -24 }}>
-                            <p>Our Mission</p>
-                            <strong style={{ fontSize: 15 }}>People &amp; Growth</strong>
+                            <p>Companies Trust Us</p>
+                            <strong style={{ fontSize: 15 }}>50+ Clients</strong>
                         </div>
 
                         <div className="hero-float-card" style={{ bottom: 56, right: -20 }}>
-                            <p>Founded with love for</p>
-                            <strong style={{ fontSize: 16 }}>June</strong>
+                            <p>Candidates Placed</p>
+                            <strong style={{ fontSize: 16 }}>500+ Hires</strong>
                         </div>
                     </div>
                 </div>
