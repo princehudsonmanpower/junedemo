@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Get Started — Form section (standalone)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Vanilla CSS — same design tokens as get-started-form-section.css */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: linear-gradient(180deg, #f5f8ff 0%, #fafcff 100%);
+        min-height: 100vh;
+        padding: 48px 16px 64px;
+      }
+      .get-started-form-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .get-started-form-header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .get-started-form-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 12px;
+      }
+      .get-started-form-subtitle {
+        font-size: 1.05rem;
+        color: #64748b;
+        line-height: 1.65;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .get-started-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .get-started-tab {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        color: #475569;
+        cursor: pointer;
+        transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      }
+      .get-started-tab:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        color: #0f172a;
+      }
+      .get-started-tab.is-active {
+        background: #0f172a;
+        color: #fff;
+        border-color: #0f172a;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+      }
+      .get-started-card {
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #e8ecf1;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 12px 40px rgba(15, 23, 42, 0.06);
+        padding: 28px 28px 24px;
+      }
+      .get-started-context {
+        font-size: 0.9375rem;
+        color: #334155;
+        margin: 0 0 16px;
+      }
+      .get-started-trust {
+        font-size: 0.8125rem;
+        color: #94a3b8;
+        margin: 0 0 18px;
+      }
+      .get-started-iframe-wrap {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #eef2f6;
+        background: #f8fafc;
+        min-height: 800px;
+      }
+      .get-started-iframe {
+        width: 100%;
+        min-height: 800px;
+        height: 850px;
+        border: 0;
+      }
+      .get-started-loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: #f8fafc;
+        z-index: 2;
+        transition: opacity 0.35s ease;
+      }
+      .get-started-loading.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .get-started-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #e2e8f0;
+        border-top-color: #0a66c2;
+        border-radius: 50%;
+        animation: spin 0.75s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .get-started-fallback {
+        margin-top: 14px;
+        text-align: center;
+        font-size: 0.8125rem;
+        color: #94a3b8;
+      }
+      .get-started-fallback a {
+        color: #0a66c2;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      @media (max-width: 640px) {
+        .get-started-tabs {
+          flex-direction: column;
+        }
+        .get-started-tab {
+          width: 100%;
+        }
+        .get-started-iframe {
+          min-height: 720px;
+          height: 780px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Semantic section: drop into any page -->
+    <section class="get-started-form-section" aria-labelledby="get-started-title">
+      <div class="get-started-form-inner">
+        <header class="get-started-form-header">
+          <h2 id="get-started-title" class="get-started-form-title">Get Started</h2>
+          <p class="get-started-form-subtitle">
+            Tell us about your requirements and we’ll connect you with the right opportunities.
+          </p>
+        </header>
+
+        <p class="get-started-form-note">
+          One short form for everyone—we route your request based on whether you’re hiring or job-seeking.
+        </p>
+
+        <div class="get-started-tabs" role="tablist" aria-label="Choose employer or candidate">
+          <button type="button" class="get-started-tab is-active" data-audience="employer" role="tab" aria-selected="true">
+            For Employers
+          </button>
+          <button type="button" class="get-started-tab" data-audience="candidate" role="tab" aria-selected="false">
+            For Candidates
+          </button>
+        </div>
+
+        <article class="get-started-card">
+          <p id="context-line" class="get-started-context">Hire top talent quickly and efficiently.</p>
+          <p class="get-started-trust"><span aria-hidden="true">🔒</span> Your data is secure and will not be shared.</p>
+
+          <div class="get-started-iframe-wrap">
+            <div id="loading" class="get-started-loading">
+              <div class="get-started-spinner" aria-hidden="true"></div>
+              <span style="color: #64748b; font-size: 0.875rem">Loading form…</span>
+            </div>
+            <iframe
+              id="gform"
+              class="get-started-iframe"
+              title="Get started form"
+              src="https://docs.google.com/forms/d/e/1FAIpQLScR81coMyU1DeG5TWNWOctqJBklt4uQCoQA78HsHOOtHWC4Yg/viewform?embedded=true"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <p class="get-started-fallback">
+            Form not loading?
+            <a href="https://forms.gle/MsTwhweQYQKds57x6" target="_blank" rel="noopener noreferrer">Open in a new tab</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var descriptions = {
+          employer: "Hire top talent quickly and efficiently.",
+          candidate: "Find opportunities that match your skills.",
+        };
+
+        var tabs = document.querySelectorAll(".get-started-tab");
+        var context = document.getElementById("context-line");
+        var loading = document.getElementById("loading");
+        var iframe = document.getElementById("gform");
+
+        function setTab(audience) {
+          tabs.forEach(function (btn) {
+            var isActive = btn.getAttribute("data-audience") === audience;
+            btn.classList.toggle("is-active", isActive);
+            btn.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+          context.textContent = descriptions[audience];
+        }
+
+        tabs.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            setTab(btn.getAttribute("data-audience"));
+          });
+        });
+
+        iframe.addEventListener("load", function () {
+          loading.classList.add("is-hidden");
+        });
+
+        // ?type=employer | ?type=candidate
+        var params = new URLSearchParams(window.location.search);
+        var t = params.get("type");
+        if (t === "candidate" || t === "candidates") setTab("candidate");
+        else setTab("employer");
+      })();
+    </script>
+  </body>
+</html>

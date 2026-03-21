@@ -6,15 +6,28 @@ export default function Hero() {
     const h1Ref = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-        /* Simple entrance animation via class toggle */
         const els = document.querySelectorAll(".hero-anim");
+        const reduce =
+            typeof window !== "undefined" &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduce) {
+            els.forEach((el) => {
+                const h = el as HTMLElement;
+                h.style.opacity = "1";
+                h.style.transform = "none";
+            });
+            return;
+        }
+
         els.forEach((el, i) => {
-            (el as HTMLElement).style.opacity = "0";
-            (el as HTMLElement).style.transform = "translateY(28px)";
-            (el as HTMLElement).style.transition = `opacity 0.65s ease ${i * 0.12}s, transform 0.65s ease ${i * 0.12}s`;
+            const h = el as HTMLElement;
+            h.style.opacity = "0";
+            h.style.transform = "translateY(28px)";
+            h.style.transition = `opacity 0.65s ease ${i * 0.12}s, transform 0.65s ease ${i * 0.12}s`;
             setTimeout(() => {
-                (el as HTMLElement).style.opacity = "1";
-                (el as HTMLElement).style.transform = "translateY(0)";
+                h.style.opacity = "1";
+                h.style.transform = "translateY(0)";
             }, 80);
         });
     }, []);
@@ -37,7 +50,7 @@ export default function Hero() {
 
                     {/* ── LEFT: Text ── */}
                     <div>
-                        <div className="hero-eyebrow hero-anim" style={{ background: "rgba(10,102,194,0.12)", border: "1px solid rgba(10,102,194,0.22)", color: "#7EC8FF" }}>
+                        <div className="hero-eyebrow hero-eyebrow--home hero-anim">
                             People-First. Growth-Focused.
                         </div>
 
@@ -65,23 +78,13 @@ export default function Hero() {
                         </div>
 
                         {/* Trust chips */}
-                        <div className="hero-anim" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 36 }}>
+                        <div className="hero-trust-chips hero-anim">
                             {[
                                 { icon: "✦", text: "End-to-end HR" },
                                 { icon: "✦", text: "Talent Acquisition" },
                                 { icon: "✦", text: "Free Internships" },
                             ].map((chip) => (
-                                <span
-                                    key={chip.text}
-                                    style={{
-                                        display: "flex", alignItems: "center", gap: 7,
-                                        background: "rgba(255,255,255,0.07)",
-                                        border: "1px solid rgba(255,255,255,0.1)",
-                                        borderRadius: 100, padding: "6px 14px",
-                                        fontSize: 13, color: "rgba(255,255,255,0.65)",
-                                        fontWeight: 500,
-                                    }}
-                                >
+                                <span key={chip.text} className="hero-trust-chip">
                                     {chip.icon} {chip.text}
                                 </span>
                             ))}

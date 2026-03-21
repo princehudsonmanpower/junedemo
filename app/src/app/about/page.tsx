@@ -68,7 +68,6 @@ export default function AboutPage() {
             <PageHero
                 eyebrow="Our Story & Values"
                 title="Why JuneHires?"
-                titleHighlight="Named after June."
                 subtitle="JuneHires is more than a hiring agency. It's a promise — that every person matters, every detail counts, and every partnership is personal."
             />
             
@@ -143,8 +142,8 @@ export default function AboutPage() {
             </section>
 
             <CTASection
-                title="Ready to experience the difference?"
-                titleHighlight="the difference?"
+                titlePrefix="Ready to experience "
+                titleAccent="the difference?"
                 subtitle="Whether you're hiring or job hunting, JuneHires is here to help. Let's start a conversation."
                 primaryCta={{ label: "Contact Us", href: "/contact" }}
                 secondaryCta={{ label: "View Services", href: "/services" }}

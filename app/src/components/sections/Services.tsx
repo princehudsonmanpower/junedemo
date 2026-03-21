@@ -34,7 +34,7 @@ const services = [
             "Performance management frameworks",
             "Employee engagement strategies",
         ],
-        cta: { label: "Explore Retainer", href: "/services#how-it-works" },
+        cta: { label: "Explore Retainer", href: "/services#hr-retainer-process" },
     },
 ];
 

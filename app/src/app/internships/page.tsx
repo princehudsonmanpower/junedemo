@@ -143,10 +143,10 @@ export default function InternshipsPage() {
             </section>
 
             <CTASection
-                title="Ready to kickstart your career?"
-                titleHighlight="your career?"
+                titlePrefix="Ready to kickstart "
+                titleAccent="your career?"
                 subtitle="Apply for our free internship program today. No experience required — just bring your curiosity and eagerness to learn."
-                primaryCta={{ label: "Apply Now", href: "/contact" }}
+                primaryCta={{ label: "Apply Now", href: "mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires" }}
                 secondaryCta={{ label: "Browse Jobs", href: "/careers" }}
             />
         </>

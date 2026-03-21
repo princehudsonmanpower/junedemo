@@ -41,8 +41,8 @@ export default function TestimonialsPage() {
             <Testimonials />
 
             <CTASection
-                title="Ready to become our next success story?"
-                titleHighlight="next success story?"
+                titlePrefix="Ready to become our "
+                titleAccent="next success story?"
                 subtitle="Join the hundreds of businesses and professionals who have grown with JuneHires."
                 primaryCta={{ label: "Get Started", href: "/contact" }}
                 secondaryCta={{ label: "View Services", href: "/services" }}

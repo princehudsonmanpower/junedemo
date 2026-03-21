@@ -51,11 +51,12 @@ export default function WhyJuneHires() {
                     <div>
                         <span className="eyebrow">
                             <span className="eyebrow-dot" />
-                            Our Story &amp; Values
+                            A closer look
                         </span>
 
                         <h2 className="section-title">
-                            Why <span style={{ color: "var(--blue)" }}>JuneHires?</span>
+                            Our story &amp;{" "}
+                            <span style={{ color: "var(--blue)" }}>values</span>
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 24 }}>
@@ -63,6 +64,19 @@ export default function WhyJuneHires() {
                             We combine rigorous talent acquisition with a genuinely personal touch — because
                             every placement is a partnership, not just a transaction.
                         </p>
+
+                        <aside className="why-june-origin" aria-labelledby="why-june-title">
+                            <h3 id="why-june-title" className="why-june-origin-title">
+                                Why &ldquo;June&rdquo;?
+                            </h3>
+                            <p>
+                                Before there was a logo, there was a dog — <strong>June</strong>, the one I loved
+                                most. She was loyalty in a small body: present, patient, and unshakably kind.
+                                When I named this company, I wasn&apos;t thinking of a month on the calendar;
+                                I was carrying her forward. <em>JuneHires</em> is my way of bringing that same
+                                spirit into how we treat people — faithful, warm, and human, every single time.
+                            </p>
+                        </aside>
 
                         {/* Values pills */}
                         <div className="why-values">

@@ -1,0 +1,307 @@
+/**
+ * Get Started — Google Form embed section
+ * Uses design tokens from globals.css (:root) for consistency with the rest of the site.
+ */
+
+.get-started-form-section {
+  padding: 72px 0 96px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+  animation: get-started-fade-in 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .get-started-form-section {
+    animation: none;
+  }
+}
+
+@keyframes get-started-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.get-started-form-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.get-started-form-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.get-started-form-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.get-started-form-subtitle {
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Clarifies that both tabs use one form */
+.get-started-form-note {
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: var(--text-soft);
+  text-align: center;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0 auto 20px;
+}
+
+/* Tab group — toggle */
+.get-started-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.get-started-tab {
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  color: var(--charcoal-3);
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.15s ease;
+}
+
+.get-started-tab:hover {
+  background: var(--cream);
+  border-color: var(--border-warm);
+  color: var(--charcoal);
+}
+
+.get-started-tab:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.get-started-tab.is-active {
+  background: var(--charcoal);
+  color: #fff;
+  border-color: var(--charcoal);
+  box-shadow: var(--shadow-card);
+}
+
+.get-started-tab:active {
+  transform: scale(0.98);
+}
+
+/* Card */
+.get-started-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
+  padding: 28px 28px 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.get-started-card:hover {
+  box-shadow: var(--shadow-warm);
+}
+
+.get-started-context {
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: var(--charcoal-2);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  min-height: 1.5em;
+  transition: opacity 0.25s ease;
+}
+
+.get-started-context.is-switching {
+  opacity: 0.45;
+}
+
+.get-started-trust {
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--text-mid);
+  font-weight: 500;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.get-started-trust-icon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+/* Iframe wrapper — responsive; inner scroll controlled by Google */
+.get-started-iframe-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background: var(--cream);
+  min-height: 760px;
+}
+
+.get-started-iframe {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  height: 820px;
+  border: 0;
+  vertical-align: top;
+}
+
+/* Loading skeleton */
+.get-started-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+  z-index: 2;
+  transition: opacity 0.35s ease;
+}
+
+.get-started-loading.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.get-started-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-soft);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: get-started-spin 0.75s linear infinite;
+}
+
+@keyframes get-started-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.get-started-skeleton-lines {
+  width: min(100%, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.get-started-skeleton-line {
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--border-soft) 0%,
+    var(--cream) 50%,
+    var(--border-soft) 100%
+  );
+  background-size: 200% 100%;
+  animation: get-started-shimmer 1.2s ease-in-out infinite;
+}
+
+.get-started-skeleton-line:nth-child(2) {
+  width: 85%;
+}
+.get-started-skeleton-line:nth-child(3) {
+  width: 70%;
+}
+
+@keyframes get-started-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.get-started-loading-text {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+}
+
+.get-started-fallback {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-soft);
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+}
+
+.get-started-fallback a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.get-started-fallback a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .get-started-form-section {
+    padding: 48px 0 64px;
+  }
+
+  .get-started-card {
+    padding: 20px 16px 16px;
+    border-radius: 14px;
+  }
+
+  .get-started-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .get-started-tab {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .get-started-iframe-wrap {
+    min-height: 640px;
+  }
+
+  .get-started-iframe {
+    min-height: 640px;
+    height: 700px;
+  }
+}

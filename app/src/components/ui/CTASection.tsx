@@ -2,16 +2,18 @@
 import Link from "next/link";
 
 interface CTASectionProps {
-    title?: string;
-    titleHighlight?: string;
+    /** Plain text before the accent span (no string splitting). */
+    titlePrefix?: string;
+    /** Accent segment; styled with .cta-title-accent */
+    titleAccent?: string;
     subtitle?: string;
     primaryCta?: { label: string; href: string };
     secondaryCta?: { label: string; href: string };
 }
 
 export default function CTASection({
-    title = "Ready to find the perfect fit?",
-    titleHighlight = "the perfect fit?",
+    titlePrefix = "Ready to find the ",
+    titleAccent = "perfect fit?",
     subtitle = "Let's talk about your hiring needs. No obligations — just a genuine conversation about how we can help you grow.",
     primaryCta = { label: "Get in Touch", href: "/contact" },
     secondaryCta = { label: "View Open Roles", href: "/careers" },
@@ -28,8 +30,8 @@ export default function CTASection({
                     </span>
 
                     <h2 className="section-title" style={{ color: "var(--charcoal)", textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
-                        {title.replace(titleHighlight, "")}
-                        <span style={{ color: "var(--amber)" }}>{titleHighlight}</span>
+                        {titlePrefix}
+                        <span className="cta-title-accent">{titleAccent}</span>
                     </h2>
 
                     <p style={{

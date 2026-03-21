@@ -71,8 +71,8 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
                             <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>For Employers</Link>
+                            <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
                         </div>
 
                         {/* Hamburger */}
@@ -156,8 +156,8 @@ export default function Navbar() {
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
                             <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>For Employers</Link>
+                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
                         </div>
                     </div>
                 </div>

@@ -63,8 +63,8 @@ export default function CareersPage() {
             <Jobs />
 
             <CTASection
-                title="Don't see the right role?"
-                titleHighlight="the right role?"
+                titlePrefix="Don't see "
+                titleAccent="the right role?"
                 subtitle="Send a speculative application to recruiter@junehires.com — we're always looking for talented people."
                 primaryCta={{ label: "Send Application", href: "mailto:recruiter@junehires.com" }}
                 secondaryCta={{ label: "Learn About Us", href: "/about" }}
