@@ -51,6 +51,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: 1.6;
+  cursor: url('/paw-cursor.svg') 12 12, auto;
 }
 
 /* Keep pointer cursor on interactive elements */
@@ -61,7 +62,7 @@ select,
 textarea,
 label,
 [role="button"] {
-  cursor: pointer;
+  cursor: url('/paw-pointer.svg') 12 12, pointer;
 }
 
 h1,
@@ -1442,7 +1443,7 @@ h4 {
 /* ─── NEW: CTA Section ─── */
 .cta-section {
   padding: 96px 0;
-  background: var(--charcoal);
+  background: #ffffff; /* Updated to complete white as requested */
   position: relative;
   overflow: hidden;
 }
@@ -1486,7 +1487,7 @@ h4 {
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-mid);
   font-weight: 500;
 }
 

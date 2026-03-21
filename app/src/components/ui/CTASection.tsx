@@ -22,18 +22,18 @@ export default function CTASection({
                 <div className="cta-inner">
 
 
-                    <span className="eyebrow" style={{ color: "var(--amber-light)", justifyContent: "center" }}>
-                        <span className="eyebrow-dot" style={{ background: "var(--amber-light)" }} />
+                    <span className="eyebrow" style={{ color: "var(--amber)", justifyContent: "center" }}>
+                        <span className="eyebrow-dot" style={{ background: "var(--amber)" }} />
                         Let&apos;s Work Together
                     </span>
 
-                    <h2 className="section-title" style={{ color: "#fff", textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
+                    <h2 className="section-title" style={{ color: "var(--charcoal)", textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
                         {title.replace(titleHighlight, "")}
-                        <span style={{ color: "var(--amber-light)" }}>{titleHighlight}</span>
+                        <span style={{ color: "var(--amber)" }}>{titleHighlight}</span>
                     </h2>
 
                     <p style={{
-                        fontSize: 17, color: "rgba(255,255,255,0.55)",
+                        fontSize: 17, color: "var(--text-mid)",
                         lineHeight: 1.75, textAlign: "center",
                         maxWidth: 520, margin: "0 auto 36px",
                     }}>
@@ -47,7 +47,7 @@ export default function CTASection({
                                 <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </Link>
-                        <Link href={secondaryCta.href} className="btn btn-ghost-dark" id="cta-secondary">
+                        <Link href={secondaryCta.href} className="btn btn-outline" id="cta-secondary">
                             {secondaryCta.label}
                         </Link>
                     </div>
@@ -56,7 +56,7 @@ export default function CTASection({
                     <div className="cta-trust-signals">
                         {["No contracts", "No hidden fees", "Replacement guarantee"].map((signal) => (
                             <span key={signal} className="cta-trust-item">
-                                <span style={{ color: "var(--amber-light)" }}>✓</span> {signal}
+                                <span style={{ color: "var(--amber)" }}>✓</span> {signal}
                             </span>
                         ))}
                     </div>

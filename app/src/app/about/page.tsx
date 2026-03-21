@@ -65,9 +65,14 @@ const faqs = [
 export default function AboutPage() {
     return (
         <>
-        <div style={{ paddingTop: '80px' }}>
+            <PageHero
+                eyebrow="Our Story & Values"
+                title="Why JuneHires?"
+                titleHighlight="Named after June."
+                subtitle="JuneHires is more than a hiring agency. It's a promise — that every person matters, every detail counts, and every partnership is personal."
+            />
+            
             <WhyJuneHire />
-        </div>
 
             {/* Mission section */}
             <section className="mission-section">

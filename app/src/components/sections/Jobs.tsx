@@ -31,23 +31,7 @@ const openings = [
     },
 ];
 
-const steps = [
-    {
-        num: "01",
-        title: "Check the Subject Line",
-        desc: "Each job listing has a specific email subject format. Copy it exactly — this is your first test of attention to detail.",
-    },
-    {
-        num: "02",
-        title: "Submit your CV via Email",
-        desc: "Send your CV to recruiter@junehires.com with the correct subject line. Make it count — first impressions matter.",
-    },
-    {
-        num: "03",
-        title: "Complete the Application Form",
-        desc: "Click the link in the job description to fill in your application details. This helps us understand you better.",
-    },
-];
+
 
 export default function Jobs() {
     const [copied, setCopied] = useState<string | null>(null);
@@ -73,51 +57,6 @@ export default function Jobs() {
                         We value attention to detail. Every application step matters — and
                         getting it right is your first chance to impress us.
                     </p>
-                </div>
-
-                {/* How to apply steps */}
-                <div style={{ marginTop: 16, marginBottom: 8 }}>
-                    <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 20 }}>
-                        How to Apply
-                    </p>
-                </div>
-                <div className="jobs-how-grid">
-                    {steps.map((s) => (
-                        <div key={s.num} className="how-step-card" id={`step-${s.num}`}>
-                            <div className="how-step-num">{s.num}</div>
-                            <h4>{s.title}</h4>
-                            <p>{s.desc}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Email CTA band */}
-                <div className="jobs-cta-band">
-                    <div>
-                        <h3>Ready to apply?</h3>
-                        <p>Send your CV to our recruiter — we read every application.</p>
-                    </div>
-                    <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-                        <span style={{
-                            background: "rgba(255,255,255,0.06)",
-                            border: "1px solid rgba(255,255,255,0.1)",
-                            borderRadius: 10,
-                            padding: "10px 18px",
-                            fontSize: 15,
-                            color: "rgba(255,255,255,0.8)",
-                            fontFamily: "monospace",
-                        }}>
-                            recruiter@junehires.com
-                        </span>
-                        <button
-                            onClick={copyEmail}
-                            className="btn btn-primary"
-                            id="copy-email-btn"
-                            style={{ cursor: "pointer" }}
-                        >
-                            {copied === "email" ? "✓ Copied!" : "Copy Email"}
-                        </button>
-                    </div>
                 </div>
 
                 {/* Openings list */}
@@ -149,6 +88,35 @@ export default function Jobs() {
                             </svg>
                         </div>
                     ))}
+                </div>
+
+                {/* Email CTA band */}
+                <div className="jobs-cta-band" style={{ marginTop: 48 }}>
+                    <div>
+                        <h3>Ready to apply?</h3>
+                        <p>Send your CV to our recruiter — we read every application.</p>
+                    </div>
+                    <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+                        <span style={{
+                            background: "rgba(255,255,255,0.06)",
+                            border: "1px solid rgba(255,255,255,0.1)",
+                            borderRadius: 10,
+                            padding: "10px 18px",
+                            fontSize: 15,
+                            color: "rgba(255,255,255,0.8)",
+                            fontFamily: "monospace",
+                        }}>
+                            recruiter@junehires.com
+                        </span>
+                        <button
+                            onClick={copyEmail}
+                            className="btn btn-primary"
+                            id="copy-email-btn"
+                            style={{ cursor: "pointer" }}
+                        >
+                            {copied === "email" ? "✓ Copied!" : "Copy Email"}
+                        </button>
+                    </div>
                 </div>
 
                 {/* No openings remark */}

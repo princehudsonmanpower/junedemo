@@ -34,7 +34,7 @@ export default function CareersPage() {
             <section style={{
                 paddingTop: "120px",
                 paddingBottom: "48px",
-                background: "var(--charcoal)",
+                background: "var(--warm-white)",
                 textAlign: "center",
             }}>
                 <div className="container">
@@ -45,7 +45,7 @@ export default function CareersPage() {
                     <h1 style={{
                         fontSize: "clamp(32px, 5vw, 56px)",
                         fontWeight: 800,
-                        color: "#fff",
+                        color: "var(--charcoal)",
                         lineHeight: 1.15,
                         marginTop: 12,
                         marginBottom: 16,
@@ -54,7 +54,7 @@ export default function CareersPage() {
                         Find Your Next<br />
                         <span style={{ color: "var(--blue-light)" }}>Career Move.</span>
                     </h1>
-                    <p style={{ fontSize: 17, color: "rgba(255,255,255,0.65)", maxWidth: 540, margin: "0 auto" }}>
+                    <p style={{ fontSize: 17, color: "var(--text-mid)", maxWidth: 540, margin: "0 auto" }}>
                         Browse open roles at JuneHires and apply directly. We’re always looking for talented HR professionals, EAs, and coordinators.
                     </p>
                 </div>

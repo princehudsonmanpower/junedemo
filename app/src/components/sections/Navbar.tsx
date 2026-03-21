@@ -16,6 +16,9 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const pathname = usePathname();
 
+    // Remove the light page check since /about now correctly contains a PageHero dark section!
+    const isScrolled = scrolled;
+
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
         window.addEventListener("scroll", onScroll);
@@ -30,14 +33,23 @@ export default function Navbar() {
     return (
         <>
             <header
-                className={`navbar${scrolled ? " scrolled" : ""}`}
+                className={`navbar${isScrolled ? " scrolled" : ""}`}
                 style={{ padding: "0 24px" }}
             >
                 <div className="container">
                     <div className="nav-inner">
                         {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
-                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "40px", width: "auto" }} />
+                            <img 
+                                src="/JuneHires_logo.png" 
+                                alt="JuneHires Logo" 
+                                style={{ 
+                                    height: "50px", 
+                                    width: "auto",
+                                    filter: isScrolled ? "none" : "drop-shadow(1px 1px 0px rgba(255,255,255,0.45)) drop-shadow(-1px -1px 0px rgba(255,255,255,0.45)) drop-shadow(1px -1px 0px rgba(255,255,255,0.45)) drop-shadow(-1px 1px 0px rgba(255,255,255,0.45))",
+                                    transition: "filter 0.35s ease"
+                                }} 
+                            />
                         </Link>
 
                         {/* Desktop links */}
@@ -59,7 +71,7 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/careers" className={scrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
+                            <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
                             <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>For Employers</Link>
                         </div>
 
@@ -71,12 +83,12 @@ export default function Navbar() {
                             style={{
                                 display: "none",
                                 background: "none",
-                                border: scrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
+                                border: isScrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
                                 borderRadius: 10,
                                 padding: "8px 10px",
                                 cursor: "pointer",
                                 fontSize: 18,
-                                color: scrolled ? "var(--charcoal)" : "#fff",
+                                color: isScrolled ? "var(--charcoal)" : "#fff",
                                 transition: "all 0.35s ease",
                             }}
                             className="hamburger-btn"
@@ -116,7 +128,7 @@ export default function Navbar() {
                         }}
                     >
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "36px", width: "auto" }} />
+                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "46px", width: "auto" }} />
                             <button
                                 onClick={() => setMobileOpen(false)}
                                 style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "var(--text-mid)" }}
