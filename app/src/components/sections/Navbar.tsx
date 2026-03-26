@@ -16,8 +16,9 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const pathname = usePathname();
 
-    // Remove the light page check since /about now correctly contains a PageHero dark section!
-    const isScrolled = scrolled;
+    // Light-background pages — navbar should always show dark text
+    const isLightPage = ["/careers", "/internships", "/contact"].includes(pathname);
+    const isScrolled = scrolled || isLightPage;
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
