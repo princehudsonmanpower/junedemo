@@ -1373,11 +1373,14 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   line-height: 0;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  /* Light knockout so blue wordmark reads clearly on charcoal footer */
+  background: var(--warm-white);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .footer-brand h3 {
