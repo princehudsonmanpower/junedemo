@@ -77,7 +77,7 @@ function GetStartedFormSectionInner() {
             className={`get-started-tab${audience === "employer" ? " is-active" : ""}`}
             onClick={() => selectAudience("employer")}
           >
-            For Employers
+            Work with us
           </button>
           <button
             type="button"

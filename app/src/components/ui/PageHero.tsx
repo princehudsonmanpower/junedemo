@@ -53,19 +53,32 @@ export default function PageHero({ eyebrow, title, titleHighlight, subtitle, pri
                     <p className="hero-sub page-hero-anim">{subtitle}</p>
                     {(primaryCta || secondaryCta) && (
                         <div className="hero-ctas page-hero-anim">
-                            {primaryCta && (
-                                <Link href={primaryCta.href} className="btn btn-primary" id="page-hero-primary-cta">
-                                    {primaryCta.label}
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </Link>
-                            )}
-                            {secondaryCta && (
-                                <Link href={secondaryCta.href} className="btn btn-ghost-dark" id="page-hero-secondary-cta">
-                                    {secondaryCta.label}
-                                </Link>
-                            )}
+                            {primaryCta &&
+                                (primaryCta.href.startsWith("mailto:") ? (
+                                    <a href={primaryCta.href} className="btn btn-primary" id="page-hero-primary-cta">
+                                        {primaryCta.label}
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </a>
+                                ) : (
+                                    <Link href={primaryCta.href} className="btn btn-primary" id="page-hero-primary-cta">
+                                        {primaryCta.label}
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </Link>
+                                ))}
+                            {secondaryCta &&
+                                (secondaryCta.href.startsWith("mailto:") ? (
+                                    <a href={secondaryCta.href} className="btn btn-ghost-dark" id="page-hero-secondary-cta">
+                                        {secondaryCta.label}
+                                    </a>
+                                ) : (
+                                    <Link href={secondaryCta.href} className="btn btn-ghost-dark" id="page-hero-secondary-cta">
+                                        {secondaryCta.label}
+                                    </Link>
+                                ))}
                         </div>
                     )}
                 </div>

@@ -11,8 +11,10 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div className="footer-brand">
-                        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "48px", width: "auto" }} />
+                        <div className="footer-brand-logo-row">
+                            <span className="footer-brand-logo-wrap">
+                                <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "48px", width: "auto", display: "block" }} />
+                            </span>
                         </div>
                         <p>
                             End-to-end human resource solutions and talent acquisition — built
@@ -40,10 +42,10 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><Link href="/services">Talent Acquisition</Link></li>
-                            <li><Link href="/services">HR Retainer</Link></li>
+                            <li><Link href="/services#process-step-02">Talent Acquisition</Link></li>
+                            <li><Link href="/services#retainer-step-02">HR Retainer</Link></li>
                             <li><Link href="/internships">Internship Program</Link></li>
-                            <li><Link href="/internships">Resume Reviews</Link></li>
+                            <li><Link href="/internships#hub-resume-cta">Resume Reviews</Link></li>
                             <li><Link href="/careers">Job Board</Link></li>
                         </ul>
                     </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Services from "@/components/sections/Services";
 import CTASection from "@/components/ui/CTASection";
+import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 export const metadata: Metadata = {
     title: "Our Services — Talent Acquisition & HR Retainer",
@@ -178,8 +179,8 @@ export default function ServicesPage() {
             <CTASection
                 titlePrefix="Ready to scale with "
                 titleAccent="world-class talent?"
-                subtitle="Book a free 15-minute discovery call. No pressure, no obligation — just a conversation about your hiring needs."
-                primaryCta={{ label: "Book Your Free Call", href: "/contact" }}
+                subtitle="Share your name, email, and the services you need — we use the same secure Google Form as on our contact page."
+                primaryCta={{ label: "Book Your Free Call", href: GOOGLE_FORM_SHORT_URL }}
                 secondaryCta={{ label: "Email Us Instead", href: "mailto:recruiter@junehires.com" }}
             />
         </>

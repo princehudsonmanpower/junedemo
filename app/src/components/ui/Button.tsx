@@ -7,6 +7,8 @@ interface ButtonProps {
     variant?: "primary" | "ghost" | "outline";
     size?: "sm" | "md" | "lg";
     href?: string;
+    target?: string;
+    rel?: string;
     onClick?: () => void;
     className?: string;
     icon?: boolean;
@@ -17,6 +19,8 @@ export default function Button({
     variant = "primary",
     size = "md",
     href,
+    target,
+    rel,
     onClick,
     className = "",
     icon = false,
@@ -60,9 +64,13 @@ export default function Button({
     );
 
     if (href) {
+        const relResolved =
+            rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
         return (
             <motion.a
                 href={href}
+                target={target}
+                rel={relResolved}
                 className={`group ${classes}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

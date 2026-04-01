@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Testimonials from "@/components/sections/Testimonials";
-import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
     title: "Success Stories & Testimonials",
@@ -39,14 +38,6 @@ export default function TestimonialsPage() {
             />
 
             <Testimonials />
-
-            <CTASection
-                titlePrefix="Ready to become our "
-                titleAccent="next success story?"
-                subtitle="Join the hundreds of businesses and professionals who have grown with JuneHires."
-                primaryCta={{ label: "Get Started", href: "/contact" }}
-                secondaryCta={{ label: "View Services", href: "/services" }}
-            />
         </>
     );
 }

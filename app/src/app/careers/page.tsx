@@ -30,36 +30,6 @@ export const metadata: Metadata = {
 export default function CareersPage() {
     return (
         <>
-            {/* Slim careers header — jobs shown directly */}
-            <section style={{
-                paddingTop: "120px",
-                paddingBottom: "48px",
-                background: "var(--warm-white)",
-                textAlign: "center",
-            }}>
-                <div className="container">
-                    <span className="eyebrow" style={{ justifyContent: "center", color: "var(--blue-light)" }}>
-                        <span className="eyebrow-dot" style={{ background: "var(--blue-light)" }} />
-                        Current Openings
-                    </span>
-                    <h1 style={{
-                        fontSize: "clamp(32px, 5vw, 56px)",
-                        fontWeight: 800,
-                        color: "var(--charcoal)",
-                        lineHeight: 1.15,
-                        marginTop: 12,
-                        marginBottom: 16,
-                        fontFamily: "'Playfair Display', Georgia, serif",
-                    }}>
-                        Find Your Next<br />
-                        <span style={{ color: "var(--blue-light)" }}>Career Move.</span>
-                    </h1>
-                    <p style={{ fontSize: 17, color: "var(--text-mid)", maxWidth: 540, margin: "0 auto" }}>
-                        Browse open roles at JuneHires and apply directly. We’re always looking for talented HR professionals, EAs, and coordinators.
-                    </p>
-                </div>
-            </section>
-
             <Jobs />
 
             <CTASection

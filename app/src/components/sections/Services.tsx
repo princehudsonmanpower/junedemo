@@ -6,7 +6,7 @@ const services = [
         id: "talent-acquisition",
         icon: "✦",
         iconClass: "service-icon-amber",
-        tag: "For Employers",
+        tag: "Work with us",
         tagClass: "tag-amber",
         title: "Talent Acquisition",
         description:

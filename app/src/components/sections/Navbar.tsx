@@ -17,7 +17,7 @@ export default function Navbar() {
     const pathname = usePathname();
 
     // Light-background pages — navbar should always show dark text
-    const isLightPage = ["/careers", "/internships", "/contact"].includes(pathname);
+    const isLightPage = ["/careers", "/internships", "/contact", "/about"].includes(pathname);
     const isScrolled = scrolled || isLightPage;
 
     useEffect(() => {
@@ -41,16 +41,17 @@ export default function Navbar() {
                     <div className="nav-inner">
                         {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
-                            <img 
-                                src="/JuneHires_logo.png" 
-                                alt="JuneHires Logo" 
-                                style={{ 
-                                    height: "50px", 
-                                    width: "auto",
-                                    filter: isScrolled ? "none" : "drop-shadow(1px 1px 0px rgba(255,255,255,0.45)) drop-shadow(-1px -1px 0px rgba(255,255,255,0.45)) drop-shadow(1px -1px 0px rgba(255,255,255,0.45)) drop-shadow(-1px 1px 0px rgba(255,255,255,0.45))",
-                                    transition: "filter 0.35s ease"
-                                }} 
-                            />
+                            <span className="nav-logo-plate">
+                                <img
+                                    src="/JuneHires_logo.png"
+                                    alt="JuneHires Logo"
+                                    style={{
+                                        height: "50px",
+                                        width: "auto",
+                                        display: "block",
+                                    }}
+                                />
+                            </span>
                         </Link>
 
                         {/* Desktop links */}
@@ -72,7 +73,7 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>For Employers</Link>
+                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Work with us</Link>
                             <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
                         </div>
 
@@ -157,7 +158,7 @@ export default function Navbar() {
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>For Employers</Link>
+                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>Work with us</Link>
                             <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
                         </div>
                     </div>

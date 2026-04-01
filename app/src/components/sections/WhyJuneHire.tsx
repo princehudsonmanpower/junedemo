@@ -106,12 +106,9 @@ export default function WhyJuneHires() {
                             </div>
                         </div>
 
-                        <div style={{ display: "flex", gap: 12, marginTop: 36, flexWrap: "wrap" }}>
+                        <div style={{ marginTop: 36 }}>
                             <Link href="/contact" className="btn btn-primary" id="why-hire-cta">
                                 Work with Us
-                            </Link>
-                            <Link href="/testimonials" className="btn btn-outline" id="why-stories-cta">
-                                Read Success Stories
                             </Link>
                         </div>
                     </div>

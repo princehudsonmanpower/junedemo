@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
 
+function isHttpUrl(href: string) {
+    return href.startsWith("http://") || href.startsWith("https://");
+}
+
 interface CTASectionProps {
     /** Plain text before the accent span (no string splitting). */
     titlePrefix?: string;
@@ -43,15 +47,43 @@ export default function CTASection({
                     </p>
 
                     <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-                        <Link href={primaryCta.href} className="btn btn-primary" id="cta-primary">
-                            {primaryCta.label}
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </Link>
-                        <Link href={secondaryCta.href} className="btn btn-outline" id="cta-secondary">
-                            {secondaryCta.label}
-                        </Link>
+                        {isHttpUrl(primaryCta.href) ? (
+                            <a
+                                href={primaryCta.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary"
+                                id="cta-primary"
+                            >
+                                {primaryCta.label}
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </a>
+                        ) : (
+                            <Link href={primaryCta.href} className="btn btn-primary" id="cta-primary">
+                                {primaryCta.label}
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </Link>
+                        )}
+                        {secondaryCta.href.startsWith("mailto:") || isHttpUrl(secondaryCta.href) ? (
+                            <a
+                                href={secondaryCta.href}
+                                {...(isHttpUrl(secondaryCta.href)
+                                    ? { target: "_blank" as const, rel: "noopener noreferrer" }
+                                    : {})}
+                                className="btn btn-outline"
+                                id="cta-secondary"
+                            >
+                                {secondaryCta.label}
+                            </a>
+                        ) : (
+                            <Link href={secondaryCta.href} className="btn btn-outline" id="cta-secondary">
+                                {secondaryCta.label}
+                            </Link>
+                        )}
                     </div>
 
                     {/* Trust signals */}

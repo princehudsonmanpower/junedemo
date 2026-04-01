@@ -91,7 +91,7 @@ export default function LinkedInFeed() {
                             rel="noopener noreferrer"
                             className="li-view-all-btn"
                         >
-                            View all posts ↗
+                            View All Openings ↗
                         </a>
                     </div>
                 </div>

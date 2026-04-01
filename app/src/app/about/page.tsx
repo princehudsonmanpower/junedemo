@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import WhyJuneHire from "@/components/sections/WhyJuneHire";
-import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
     title: "About Us — Our Story & Values",
@@ -65,51 +63,7 @@ const faqs = [
 export default function AboutPage() {
     return (
         <>
-            <PageHero
-                eyebrow="Our Story & Values"
-                title="Why JuneHires?"
-                subtitle="JuneHires is more than a hiring agency. It's a promise — that every person matters, every detail counts, and every partnership is personal."
-            />
-            
             <WhyJuneHire />
-
-            {/* Mission section */}
-            <section className="mission-section">
-                <div className="container">
-                    <div className="mission-grid">
-                        <div>
-                            <span className="eyebrow">
-                                <span className="eyebrow-dot" />
-                                Our Mission
-                            </span>
-                            <h2 className="section-title">
-                                Building bridges between{" "}
-                                <span style={{ color: "var(--amber)" }}>talent and opportunity.</span>
-                            </h2>
-                            <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, maxWidth: 520 }}>
-                                We exist to make hiring human again. In a world of automated
-                                screening and impersonal processes, JuneHires brings the personal
-                                touch back. Every candidate is a person, every company has a unique
-                                story, and our job is to make the perfect match.
-                            </p>
-                        </div>
-                        <div className="mission-values-grid">
-                            {[
-                                { icon: "✦", title: "Loyalty", desc: "We stand by our clients and candidates through every step." },
-                                { icon: "✦", title: "Consistency", desc: "Reliable, predictable, high-quality results every time." },
-                                { icon: "✦", title: "Partnership", desc: "We're not vendors — we're your extended team." },
-                                { icon: "✦", title: "Growth", desc: "We help businesses scale and individuals thrive." },
-                            ].map((v) => (
-                                <div key={v.title} className="mission-value-card">
-                                    <span className="mission-value-icon">{v.icon}</span>
-                                    <h4>{v.title}</h4>
-                                    <p>{v.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* FAQ Section */}
             <section className="faq-section" id="faq">
@@ -140,14 +94,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
-            <CTASection
-                titlePrefix="Ready to experience "
-                titleAccent="the difference?"
-                subtitle="Whether you're hiring or job hunting, JuneHires is here to help. Let's start a conversation."
-                primaryCta={{ label: "Contact Us", href: "/contact" }}
-                secondaryCta={{ label: "View Services", href: "/services" }}
-            />
         </>
     );
 }

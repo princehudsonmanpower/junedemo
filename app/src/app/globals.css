@@ -482,6 +482,23 @@ select:focus-visible {
   text-decoration: none;
 }
 
+/* Light plate behind logo on transparent navbar (dark heroes) — hidden when .navbar.scrolled */
+.nav-logo-plate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+}
+
+.navbar:not(.scrolled) .nav-logo-plate {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 16px rgba(15, 23, 42, 0.2);
+}
+
 .nav-logo-icon {
   width: 36px;
   height: 36px;
@@ -846,6 +863,10 @@ select:focus-visible {
   background: var(--cream);
   position: relative;
   overflow: hidden;
+}
+
+#hub-resume-cta {
+  scroll-margin-top: 88px;
 }
 
 .hub-grid {
@@ -1340,6 +1361,25 @@ select:focus-visible {
   margin-bottom: 48px;
 }
 
+.footer-brand-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
 .footer-brand h3 {
   font-size: 24px;
   color: #fff;
@@ -1600,6 +1640,11 @@ select:focus-visible {
 .how-it-works-section {
   padding: 96px 0;
   background: var(--cream);
+}
+
+#process-step-02,
+#retainer-step-02 {
+  scroll-margin-top: 88px;
 }
 
 .process-grid {
@@ -2194,21 +2239,24 @@ select:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 22px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
 .li-view-all-btn:hover {
-  background: rgba(255, 255, 255, 0.09);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #fff;
+  color: var(--charcoal);
+  border-color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
 }
 
 /* Cards grid */
@@ -2268,8 +2316,9 @@ select:focus-visible {
   border-radius: 9px;
   overflow: hidden;
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .li-card-avatar img {
