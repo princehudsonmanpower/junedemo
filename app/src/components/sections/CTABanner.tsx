@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 export default function CTABanner() {
     return (
@@ -33,12 +34,19 @@ export default function CTABanner() {
                 </h2>
 
                 <p className="text-[#8A8A9A] text-lg mb-10 leading-relaxed">
-                    Book a free 15-minute discovery call. No pressure, no obligation — just a
-                    conversation about your hiring needs and how JuneHire can help.
+                    Tell us your name, email, and what you need — we&apos;ll follow up fast. Same short
+                    form we use on our contact page.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center mb-10">
-                    <Button href="https://calendly.com" variant="primary" size="lg" icon>
+                    <Button
+                        href={GOOGLE_FORM_SHORT_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="primary"
+                        size="lg"
+                        icon
+                    >
                         Book Your Free Call
                     </Button>
                     <Button href="mailto:hello@junehire.com" variant="ghost" size="lg">

@@ -16,6 +16,10 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const pathname = usePathname();
 
+    // Light-background pages — navbar should always show dark text
+    const isLightPage = ["/careers", "/internships", "/contact", "/about"].includes(pathname);
+    const isScrolled = scrolled || isLightPage;
+
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
         window.addEventListener("scroll", onScroll);
@@ -30,15 +34,24 @@ export default function Navbar() {
     return (
         <>
             <header
-                className={`navbar${scrolled ? " scrolled" : ""}`}
+                className={`navbar${isScrolled ? " scrolled" : ""}`}
                 style={{ padding: "0 24px" }}
             >
                 <div className="container">
                     <div className="nav-inner">
                         {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
-                            <div className="nav-logo-icon">🐾</div>
-                            <span className="nav-logo-text">JuneHires</span>
+                            <span className="nav-logo-plate">
+                                <img
+                                    src="/JuneHires_logo.png"
+                                    alt="JuneHires Logo"
+                                    style={{
+                                        height: "50px",
+                                        width: "auto",
+                                        display: "block",
+                                    }}
+                                />
+                            </span>
                         </Link>
 
                         {/* Desktop links */}
@@ -60,8 +73,8 @@ export default function Navbar() {
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/careers" className={scrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>Find a Job</Link>
-                            <Link href="/contact" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Hire with Us</Link>
+                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Work with us</Link>
+                            <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
                         </div>
 
                         {/* Hamburger */}
@@ -72,12 +85,12 @@ export default function Navbar() {
                             style={{
                                 display: "none",
                                 background: "none",
-                                border: scrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
+                                border: isScrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
                                 borderRadius: 10,
                                 padding: "8px 10px",
                                 cursor: "pointer",
                                 fontSize: 18,
-                                color: scrolled ? "var(--charcoal)" : "#fff",
+                                color: isScrolled ? "var(--charcoal)" : "#fff",
                                 transition: "all 0.35s ease",
                             }}
                             className="hamburger-btn"
@@ -117,7 +130,7 @@ export default function Navbar() {
                         }}
                     >
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <span className="nav-logo-text">JuneHires</span>
+                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "46px", width: "auto" }} />
                             <button
                                 onClick={() => setMobileOpen(false)}
                                 style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "var(--text-mid)" }}
@@ -134,10 +147,10 @@ export default function Navbar() {
                                         borderRadius: 12,
                                         fontSize: 16,
                                         fontWeight: 500,
-                                        color: pathname === l.href ? "var(--amber)" : "var(--text-mid)",
+                                        color: pathname === l.href ? "var(--blue)" : "var(--text-mid)",
                                         textDecoration: "none",
                                         transition: "background 0.2s",
-                                        background: pathname === l.href ? "var(--amber-pale)" : "transparent",
+                                        background: pathname === l.href ? "var(--blue-pale)" : "transparent",
                                     }}
                                 >
                                     {l.label}
@@ -145,8 +158,8 @@ export default function Navbar() {
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>Find a Job</Link>
-                            <Link href="/contact" className="btn btn-primary" style={{ justifyContent: "center" }}>Hire with Us</Link>
+                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>Work with us</Link>
+                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
                         </div>
                     </div>
                 </div>

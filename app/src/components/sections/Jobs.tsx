@@ -1,53 +1,6 @@
 "use client";
 import { useState } from "react";
-
-const openings = [
-    {
-        id: "ea-intern",
-        title: "Executive Assistant Intern",
-        type: "Internship",
-        location: "Remote",
-        tag: "Free Program",
-        tagType: "amber",
-        subject: "EA Intern Application – [Your Name]",
-    },
-    {
-        id: "hr-intern",
-        title: "HR Generalist Intern",
-        type: "Internship",
-        location: "Remote",
-        tag: "Free Program",
-        tagType: "amber",
-        subject: "HR Intern Application – [Your Name]",
-    },
-    {
-        id: "talent-coordinator",
-        title: "Talent Coordinator",
-        type: "Full-time",
-        location: "Remote",
-        tag: "Open",
-        tagType: "sage",
-        subject: "Talent Coordinator Application – [Your Name]",
-    },
-];
-
-const steps = [
-    {
-        num: "01",
-        title: "Check the Subject Line",
-        desc: "Each job listing has a specific email subject format. Copy it exactly — this is your first test of attention to detail.",
-    },
-    {
-        num: "02",
-        title: "Submit your CV via Email",
-        desc: "Send your CV to recruiter@junehires.com with the correct subject line. Make it count — first impressions matter.",
-    },
-    {
-        num: "03",
-        title: "Complete the Application Form",
-        desc: "Click the link in the job description to fill in your application details. This helps us understand you better.",
-    },
-];
+import LinkedInFeed from "@/components/sections/LinkedInFeed";
 
 export default function Jobs() {
     const [copied, setCopied] = useState<string | null>(null);
@@ -75,24 +28,15 @@ export default function Jobs() {
                     </p>
                 </div>
 
-                {/* How to apply steps */}
-                <div style={{ marginTop: 16, marginBottom: 8 }}>
-                    <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 20 }}>
-                        How to Apply
-                    </p>
-                </div>
-                <div className="jobs-how-grid">
-                    {steps.map((s) => (
-                        <div key={s.num} className="how-step-card" id={`step-${s.num}`}>
-                            <div className="how-step-num">{s.num}</div>
-                            <h4>{s.title}</h4>
-                            <p>{s.desc}</p>
-                        </div>
-                    ))}
-                </div>
+            </div>
+
+            {/* LinkedIn feed sits between header and apply CTA */}
+            <LinkedInFeed />
+
+            <div className="container">
 
                 {/* Email CTA band */}
-                <div className="jobs-cta-band">
+                <div className="jobs-cta-band" style={{ marginTop: 0 }}>
                     <div>
                         <h3>Ready to apply?</h3>
                         <p>Send your CV to our recruiter — we read every application.</p>
@@ -118,37 +62,6 @@ export default function Jobs() {
                             {copied === "email" ? "✓ Copied!" : "Copy Email"}
                         </button>
                     </div>
-                </div>
-
-                {/* Openings list */}
-                <div style={{ marginTop: 48, marginBottom: 16 }}>
-                    <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                        Open Positions
-                    </p>
-                </div>
-                <div className="jobs-openings-list">
-                    {openings.map((job) => (
-                        <div
-                            key={job.id}
-                            className="job-opening-card"
-                            id={`job-${job.id}`}
-                            role="button"
-                            tabIndex={0}
-                        >
-                            <div className="job-opening-info">
-                                <h4>{job.title}</h4>
-                                <p>Subject: <span style={{ fontFamily: "monospace", color: "rgba(255,255,255,0.6)" }}>{job.subject}</span></p>
-                            </div>
-                            <div className="job-opening-tags">
-                                <span className="job-tag">{job.location}</span>
-                                <span className="job-tag">{job.type}</span>
-                                <span className={`job-tag ${job.tagType === "amber" ? "job-tag-amber" : ""}`}>{job.tag}</span>
-                            </div>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ color: "rgba(255,255,255,0.25)", flexShrink: 0 }}>
-                                <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                    ))}
                 </div>
 
                 {/* No openings remark */}

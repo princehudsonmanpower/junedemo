@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Services from "@/components/sections/Services";
-import Hub from "@/components/sections/Hub";
 import CTASection from "@/components/ui/CTASection";
+import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 export const metadata: Metadata = {
     title: "Our Services — Talent Acquisition & HR Retainer",
@@ -21,12 +22,39 @@ export const metadata: Metadata = {
         description:
             "End-to-end recruitment and dedicated HR partnership. From sourcing to onboarding, we handle the people side so you can focus on growth.",
         url: "https://www.junehires.com/services",
-        images: [{ url: "/junehires.jpg", width: 1200, height: 630, alt: "JuneHires Services" }],
+        images: [{ url: "/JuneHires_logo.png", width: 1200, height: 630, alt: "JuneHires Services" }],
     },
     alternates: {
         canonical: "https://www.junehires.com/services",
     },
 };
+
+const retainerProcessSteps = [
+    {
+        num: "01",
+        icon: "✦",
+        title: "Discovery & scope",
+        desc: "We map your team size, culture, and people priorities — then agree what “great HR” looks like for your stage.",
+    },
+    {
+        num: "02",
+        icon: "✦",
+        title: "Policies & compliance",
+        desc: "Handbooks, contracts, and compliant frameworks tailored to how you actually work — not generic templates.",
+    },
+    {
+        num: "03",
+        icon: "✦",
+        title: "Ongoing partnership",
+        desc: "A dedicated HR partner for engagement, performance conversations, and day-to-day people questions.",
+    },
+    {
+        num: "04",
+        icon: "✦",
+        title: "Review & scale",
+        desc: "Quarterly check-ins to refine priorities; flex the retainer as you hire and grow.",
+    },
+];
 
 const processSteps = [
     {
@@ -63,14 +91,58 @@ export default function ServicesPage() {
                 title="Human-centred solutions"
                 titleHighlight="built for growth."
                 subtitle="Whether you need to fill a critical role or build an entire HR function from scratch, JuneHires is your end-to-end people partner."
-                primaryCta={{ label: "Start Hiring", href: "/contact" }}
+                primaryCta={{ label: "Start Hiring", href: "#how-it-works" }}
                 secondaryCta={{ label: "View Open Roles", href: "/careers" }}
             />
 
             <Services />
 
-            {/* How It Works */}
-            <section className="how-it-works-section">
+            {/* HR Retainer workflow */}
+            <section
+                className="how-it-works-section"
+                id="hr-retainer-process"
+                style={{ background: "var(--warm-white)" }}
+            >
+                <div className="container">
+                    <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
+                        <span className="eyebrow" style={{ justifyContent: "center" }}>
+                            <span className="eyebrow-dot" />
+                            HR Retainer
+                        </span>
+                        <h2 className="section-title">
+                            Your embedded HR partner in{" "}
+                            <span style={{ color: "var(--amber)" }}>4 focused steps.</span>
+                        </h2>
+                        <p className="section-subtitle" style={{ margin: "0 auto 0" }}>
+                            From foundations to ongoing support — we stay beside you as your people function matures.
+                        </p>
+                    </div>
+
+                    <div className="process-grid">
+                        {retainerProcessSteps.map((step) => (
+                            <div key={step.num} className="process-step-card" id={`retainer-step-${step.num}`}>
+                                <div className="process-step-icon">{step.icon}</div>
+                                <div className="process-step-num">{step.num}</div>
+                                <h4>{step.title}</h4>
+                                <p>{step.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <p style={{ textAlign: "center", marginTop: 32, fontSize: 15, color: "var(--text-mid)" }}>
+                        Ready to talk retainer?{" "}
+                        <Link
+                            href="mailto:recruiter@junehires.com?subject=HR%20Retainer%20inquiry"
+                            style={{ color: "var(--amber)", fontWeight: 600 }}
+                        >
+                            Email us about HR Retainer
+                        </Link>
+                    </p>
+                </div>
+            </section>
+
+            {/* How It Works — Talent acquisition */}
+            <section className="how-it-works-section" id="how-it-works">
                 <div className="container">
                     <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
@@ -105,10 +177,10 @@ export default function ServicesPage() {
             </section>
 
             <CTASection
-                title="Ready to scale with world-class talent?"
-                titleHighlight="world-class talent?"
-                subtitle="Book a free 15-minute discovery call. No pressure, no obligation — just a conversation about your hiring needs."
-                primaryCta={{ label: "Book Your Free Call", href: "/contact" }}
+                titlePrefix="Ready to scale with "
+                titleAccent="world-class talent?"
+                subtitle="Share your name, email, and the services you need — we use the same secure Google Form as on our contact page."
+                primaryCta={{ label: "Book Your Free Call", href: GOOGLE_FORM_SHORT_URL }}
                 secondaryCta={{ label: "Email Us Instead", href: "mailto:recruiter@junehires.com" }}
             />
         </>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import PageHero from "@/components/ui/PageHero";
 import Link from "next/link";
+import GetStartedFormSection from "@/components/sections/GetStartedFormSection";
 
 export default function ContactContent() {
     const [copied, setCopied] = useState(false);
@@ -20,6 +21,8 @@ export default function ContactContent() {
                 titleHighlight="great together."
                 subtitle="Whether you need to hire exceptional talent or you're looking for your next career opportunity — we'd love to hear from you."
             />
+
+            <GetStartedFormSection />
 
             <section className="contact-section">
                 <div className="container">

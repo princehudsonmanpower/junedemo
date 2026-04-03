@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 
 const features = [
     {
@@ -16,7 +15,7 @@ const features = [
     },
     {
         icon: "✦",
-        bg: "rgba(232,160,32,0.08)",
+        bg: "var(--blue-pale)",
         title: "Zero Experience Needed",
         desc: "No prior experience required — just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
     },
@@ -24,7 +23,7 @@ const features = [
         icon: "✦",
         bg: "var(--sage-pale)",
         title: "Completely Free",
-        desc: "Our internship program is 100% free and open to anyone eager to gain real-world exposure and kickstart their career.",
+        desc: "Internship with JuneHires is 100% free — built for HR and EA profiles starting their careers and hungry for real exposure.",
     },
 ];
 
@@ -72,9 +71,9 @@ export default function Hub() {
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.75, marginBottom: 8 }}>
-                            At JuneHires, we believe the best way to start a career is through
-                            real-world exposure. Our internship program is completely free and
-                            designed for those eager to learn on the job.
+                            <strong>Internship with JuneHires</strong> is not a generic internship — it&apos;s
+                            aimed at HR and EA profiles starting their careers. Learn on real work, with
+                            mentorship, completely free.
                         </p>
 
                         <div className="hub-features">
@@ -95,15 +94,23 @@ export default function Hub() {
                         </div>
 
                         <div style={{ marginTop: 40, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                            <Link href="/contact" className="btn btn-primary" id="hub-apply-cta">
+                            <a
+                                href="mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires"
+                                className="btn btn-primary"
+                                id="hub-apply-cta"
+                            >
                                 Apply for Internship
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </Link>
-                            <Link href="/contact" className="btn btn-outline" id="hub-resume-cta">
+                            </a>
+                            <a
+                                href="mailto:recruiter@junehires.com?subject=Resume%20Review%20Request"
+                                className="btn btn-outline"
+                                id="hub-resume-cta"
+                            >
                                 Get Resume Reviewed
-                            </Link>
+                            </a>
                         </div>
                     </div>
 

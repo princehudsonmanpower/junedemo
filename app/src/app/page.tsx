@@ -39,7 +39,7 @@ export default function HomePage() {
             </span>
             <h2 className="section-title">
               Everything you need to{" "}
-              <span style={{ color: "var(--amber)" }}>grow your team.</span>
+              <span style={{ color: "var(--blue)" }}>grow your team.</span>
             </h2>
           </div>
 

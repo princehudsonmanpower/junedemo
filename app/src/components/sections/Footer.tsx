@@ -11,23 +11,17 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div className="footer-brand">
-                        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                            <div style={{
-                                width: 36, height: 36, borderRadius: 10,
-                                background: "var(--amber)",
-                                display: "flex", alignItems: "center", justifyContent: "center",
-                                fontSize: 18,
-                            }}>🐾</div>
-                            <h3 style={{ margin: 0, fontFamily: "'Playfair Display', serif", fontSize: 22, color: "#fff" }}>
-                                JuneHires
-                            </h3>
+                        <div className="footer-brand-logo-row">
+                            <span className="footer-brand-logo-wrap">
+                                <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "48px", width: "auto", display: "block" }} />
+                            </span>
                         </div>
                         <p>
                             End-to-end human resource solutions and talent acquisition — built
                             on loyalty, consistency, and a genuine love for people.
                         </p>
                         <p style={{ marginTop: 16 }}>
-                            Named after June. Built for you.
+                            Built for you.
                         </p>
                         <a
                             href="mailto:recruiter@junehires.com"
@@ -48,10 +42,10 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><Link href="/services">Talent Acquisition</Link></li>
-                            <li><Link href="/services">HR Retainer</Link></li>
+                            <li><Link href="/services#process-step-02">Talent Acquisition</Link></li>
+                            <li><Link href="/services#retainer-step-02">HR Retainer</Link></li>
                             <li><Link href="/internships">Internship Program</Link></li>
-                            <li><Link href="/internships">Resume Reviews</Link></li>
+                            <li><Link href="/internships#hub-resume-cta">Resume Reviews</Link></li>
                             <li><Link href="/careers">Job Board</Link></li>
                         </ul>
                     </div>
