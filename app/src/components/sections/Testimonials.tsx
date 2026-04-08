@@ -1,5 +1,8 @@
 "use client";
-import Link from "next/link";
+
+import { useCallback, useEffect, useRef, useState, startTransition } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
     {
@@ -62,18 +65,86 @@ function Stars({ count }: { count: number }) {
     );
 }
 
+function TestimonialCardBody({
+    text,
+    name,
+    role,
+    initial,
+    stars,
+}: (typeof testimonials)[0]) {
+    return (
+        <>
+            <Stars count={stars} />
+            <p className="testimonial-text">&ldquo;{text}&rdquo;</p>
+            <div className="testimonial-author">
+                <div className="testimonial-avatar">{initial}</div>
+                <div>
+                    <p className="testimonial-name">{name}</p>
+                    <p className="testimonial-role">{role}</p>
+                </div>
+            </div>
+        </>
+    );
+}
+
+const AUTO_MS = 5200;
+
 interface TestimonialsProps {
     limit?: number;
 }
 
 export default function Testimonials({ limit }: TestimonialsProps) {
     const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
+    const len = displayTestimonials.length;
+    const [index, setIndex] = useState(0);
+    const [reduceMotion, setReduceMotion] = useState(false);
+    const hoverPausedRef = useRef(false);
+
+    useEffect(() => {
+        startTransition(() => {
+            setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+        });
+    }, []);
+
+    const prevIdx = (index - 1 + len) % len;
+    const nextIdx = (index + 1) % len;
+
+    const go = useCallback(
+        (dir: -1 | 1) => {
+            setIndex((i) => (i + dir + len) % len);
+        },
+        [len]
+    );
+
+    const goTo = useCallback((i: number) => {
+        setIndex(((i % len) + len) % len);
+    }, [len]);
+
+    useEffect(() => {
+        if (len <= 1 || reduceMotion) return;
+        const id = setInterval(() => {
+            if (typeof document !== "undefined" && document.hidden) return;
+            if (hoverPausedRef.current) return;
+            setIndex((i) => (i + 1) % len);
+        }, AUTO_MS);
+        return () => clearInterval(id);
+    }, [len, reduceMotion]);
+
+    if (len === 0) return null;
 
     return (
-        <section id="testimonials" className="testimonials-section">
+        <section
+            id="testimonials"
+            className="testimonials-section"
+            onMouseEnter={() => {
+                hoverPausedRef.current = true;
+            }}
+            onMouseLeave={() => {
+                hoverPausedRef.current = false;
+            }}
+        >
             <div className="container">
 
-                {/* Header */}
                 <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto" }}>
                     <span className="eyebrow" style={{ justifyContent: "center" }}>
                         <span className="eyebrow-dot" />
@@ -89,32 +160,118 @@ export default function Testimonials({ limit }: TestimonialsProps) {
                     </p>
                 </div>
 
-                {/* Grid */}
-                <div className="testimonials-grid">
-                    {displayTestimonials.map((t) => (
-                        <article key={t.id} className="testimonial-card" id={`testimonial-${t.id}`}>
-                            <Stars count={t.stars} />
-                            <p className="testimonial-text">&ldquo;{t.text}&rdquo;</p>
-                            <div className="testimonial-author">
-                                <div className="testimonial-avatar">{t.initial}</div>
-                                <div>
-                                    <p className="testimonial-name">{t.name}</p>
-                                    <p className="testimonial-role">{t.role}</p>
-                                </div>
-                            </div>
-                        </article>
-                    ))}
+                <div
+                    className={`testimonials-carousel${len === 1 ? " testimonials-carousel--single" : ""}`}
+                    aria-roledescription="carousel"
+                    aria-label="Client testimonials"
+                >
+                    {len > 1 && (
+                        <button
+                            type="button"
+                            className="testimonials-carousel__nav testimonials-carousel__nav--prev"
+                            onClick={() => go(-1)}
+                            aria-label="Show previous testimonial"
+                        >
+                            <ChevronLeft size={22} strokeWidth={2.25} aria-hidden />
+                        </button>
+                    )}
+
+                    <div className="testimonials-carousel__viewport">
+                        <div className="testimonials-carousel__row">
+                            {len > 1 && (
+                                <motion.button
+                                    type="button"
+                                    className="testimonial-card testimonial-card--peek testimonial-card--peek-left"
+                                    onClick={() => goTo(prevIdx)}
+                                    aria-label={`Read testimonial from ${displayTestimonials[prevIdx].name}`}
+                                    layout
+                                    transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                                >
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={displayTestimonials[prevIdx].id}
+                                            className="testimonials-carousel__card-inner"
+                                            initial={reduceMotion ? false : { opacity: 0, x: -16 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={reduceMotion ? undefined : { opacity: 0, x: 16 }}
+                                            transition={{ duration: 0.28 }}
+                                        >
+                                            <TestimonialCardBody {...displayTestimonials[prevIdx]} />
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </motion.button>
+                            )}
+
+                            <article
+                                className="testimonial-card testimonial-card--featured"
+                                id={`testimonial-${displayTestimonials[index].id}`}
+                                aria-current="true"
+                            >
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={displayTestimonials[index].id}
+                                        className="testimonials-carousel__card-inner"
+                                        initial={reduceMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        exit={reduceMotion ? undefined : { opacity: 0, y: -10, scale: 0.98 }}
+                                        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                                    >
+                                        <TestimonialCardBody {...displayTestimonials[index]} />
+                                    </motion.div>
+                                </AnimatePresence>
+                            </article>
+
+                            {len > 1 && (
+                                <motion.button
+                                    type="button"
+                                    className="testimonial-card testimonial-card--peek testimonial-card--peek-right"
+                                    onClick={() => goTo(nextIdx)}
+                                    aria-label={`Read testimonial from ${displayTestimonials[nextIdx].name}`}
+                                    layout
+                                    transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                                >
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={displayTestimonials[nextIdx].id}
+                                            className="testimonials-carousel__card-inner"
+                                            initial={reduceMotion ? false : { opacity: 0, x: 16 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={reduceMotion ? undefined : { opacity: 0, x: -16 }}
+                                            transition={{ duration: 0.28 }}
+                                        >
+                                            <TestimonialCardBody {...displayTestimonials[nextIdx]} />
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </motion.button>
+                            )}
+                        </div>
+                    </div>
+
+                    {len > 1 && (
+                        <button
+                            type="button"
+                            className="testimonials-carousel__nav testimonials-carousel__nav--next"
+                            onClick={() => go(1)}
+                            aria-label="Show next testimonial"
+                        >
+                            <ChevronRight size={22} strokeWidth={2.25} aria-hidden />
+                        </button>
+                    )}
                 </div>
 
-                {/* Show "View All" only when limited */}
-                {limit && limit < testimonials.length && (
-                    <div style={{ textAlign: "center", marginTop: 40 }}>
-                        <Link href="/testimonials" className="btn btn-outline" id="view-all-testimonials">
-                            View All Success Stories
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </Link>
+                {len > 1 && (
+                    <div className="testimonials-carousel__dots" role="tablist" aria-label="Choose testimonial">
+                        {displayTestimonials.map((t, i) => (
+                            <button
+                                key={t.id}
+                                type="button"
+                                role="tab"
+                                aria-selected={i === index}
+                                aria-label={`Show testimonial ${i + 1}: ${t.name}`}
+                                className={`testimonials-carousel__dot${i === index ? " is-active" : ""}`}
+                                onClick={() => goTo(i)}
+                            />
+                        ))}
                     </div>
                 )}
 

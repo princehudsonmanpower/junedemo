@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -35,13 +36,13 @@ export default function Hero() {
     return (
         <section id="home" className="hero-section">
             {/* bgblobs */}
-            <div className="hero-bg-blob-1" style={{ background: "rgba(10, 102, 194, 0.10)" }} />
-            <div className="hero-bg-blob-2" style={{ background: "rgba(46, 128, 216, 0.07)" }} />
+            <div className="hero-bg-blob-1" />
+            <div className="hero-bg-blob-2" />
 
             {/* Subtle grid overlay */}
             <div style={{
                 position: "absolute", inset: 0, zIndex: 0,
-                backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+                backgroundImage: "linear-gradient(rgba(15,23,42,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.06) 1px, transparent 1px)",
                 backgroundSize: "60px 60px",
             }} />
 
@@ -72,7 +73,7 @@ export default function Hero() {
                                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </Link>
-                            <Link href="/careers" className="btn btn-ghost-dark" id="hero-jobs-cta">
+                            <Link href="/careers" className="btn btn-outline" id="hero-jobs-cta">
                                 For Candidates
                             </Link>
                         </div>
@@ -94,17 +95,19 @@ export default function Hero() {
                     {/* ── RIGHT: Professional visual ── */}
                     <div className="hero-visual">
                         <div className="hero-img-wrap float-anim">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=85&fit=crop&crop=faces"
                                 alt="Professional team collaboration at JuneHires"
-                                loading="eager"
+                                fill
+                                sizes="380px"
+                                className="object-cover"
+                                priority
                             />
-                            {/* Subtle blue overlay at bottom */}
+                            {/* Subtle vignette at bottom */}
                             <div style={{
                                 position: "absolute", bottom: 0, left: 0, right: 0,
                                 height: "40%",
-                                background: "linear-gradient(to top, rgba(10,102,194,0.20), transparent)",
+                                background: "linear-gradient(to top, rgba(15,23,42,0.28), transparent)",
                             }} />
                         </div>
 

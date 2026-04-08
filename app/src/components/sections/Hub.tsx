@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const features = [
     {
@@ -37,17 +38,21 @@ export default function Hub() {
                     <div className="hub-visual">
                         <div className="hub-image-stack">
                             <div className="hub-img-main">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=85&fit=crop"
                                     alt="Interns collaborating and learning"
+                                    fill
+                                    sizes="(max-width: 900px) 90vw, 35vw"
+                                    className="object-cover"
                                 />
                             </div>
                             <div className="hub-img-accent">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop"
                                     alt="Mentorship and career growth"
+                                    fill
+                                    sizes="(max-width: 900px) 50vw, 28vw"
+                                    className="object-cover"
                                 />
                             </div>
                             {/* Floating "Free" badge */}

@@ -18,7 +18,7 @@ export default function Jobs() {
                 {/* Header */}
                 <div style={{ maxWidth: 580 }}>
                     <span className="eyebrow">
-                        <span className="eyebrow-dot" style={{ background: "var(--amber-light)" }} />
+                        <span className="eyebrow-dot" />
                         Job Board
                     </span>
                     <h2 className="section-title">Current Openings</h2>
@@ -41,19 +41,23 @@ export default function Jobs() {
                         <h3>Ready to apply?</h3>
                         <p>Send your CV to our recruiter — we read every application.</p>
                     </div>
+                    <span className="sr-only" aria-live="polite">
+                        {copied === "email" ? "Email address copied to clipboard." : ""}
+                    </span>
                     <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
                         <span style={{
-                            background: "rgba(255,255,255,0.06)",
-                            border: "1px solid rgba(255,255,255,0.1)",
+                            background: "rgba(15, 23, 42, 0.04)",
+                            border: "1px solid var(--border-soft)",
                             borderRadius: 10,
                             padding: "10px 18px",
                             fontSize: 15,
-                            color: "rgba(255,255,255,0.8)",
+                            color: "var(--charcoal)",
                             fontFamily: "monospace",
                         }}>
                             recruiter@junehires.com
                         </span>
                         <button
+                            type="button"
                             onClick={copyEmail}
                             className="btn btn-primary"
                             id="copy-email-btn"
@@ -65,9 +69,9 @@ export default function Jobs() {
                 </div>
 
                 {/* No openings remark */}
-                <p style={{ textAlign: "center", marginTop: 32, fontSize: 14, color: "rgba(255,255,255,0.3)" }}>
+                <p style={{ textAlign: "center", marginTop: 32, fontSize: 14, color: "var(--text-soft)" }}>
                     Don&apos;t see the right role? Send a speculative application to{" "}
-                    <a href="mailto:recruiter@junehires.com" style={{ color: "var(--amber-light)", textDecoration: "none" }}>
+                    <a href="mailto:recruiter@junehires.com" style={{ color: "var(--blue)", textDecoration: "none" }}>
                         recruiter@junehires.com
                     </a>
                 </p>

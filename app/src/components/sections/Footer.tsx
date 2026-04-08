@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -13,7 +13,13 @@ export default function Footer() {
                     <div className="footer-brand">
                         <div className="footer-brand-logo-row">
                             <span className="footer-brand-logo-wrap">
-                                <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "48px", width: "auto", display: "block" }} />
+                                <Image
+                                    src="/JuneHires_logo.png"
+                                    alt="JuneHires"
+                                    width={200}
+                                    height={48}
+                                    style={{ height: "48px", width: "auto", display: "block" }}
+                                />
                             </span>
                         </div>
                         <p>
@@ -34,7 +40,8 @@ export default function Footer() {
                                 fontWeight: 500,
                             }}
                         >
-                            ✉ recruiter@junehires.com
+                            <span aria-hidden="true">✉ </span>
+                            recruiter@junehires.com
                         </a>
                     </div>
 

@@ -27,7 +27,7 @@ export default function CTABanner() {
 
                 <h2
                     className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif" }}
                 >
                     Ready to Scale With{" "}
                     <span className="gradient-text-amber">World-Class Talent?</span>

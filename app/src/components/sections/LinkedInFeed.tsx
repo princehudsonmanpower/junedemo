@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const posts = [
     {
@@ -109,7 +110,14 @@ export default function LinkedInFeed() {
                             {/* Card header */}
                             <div className="li-card-header">
                                 <div className="li-card-avatar">
-                                    <img src="/JuneHires_logo.png" alt="JuneHires" />
+                                    <Image
+                                        src="/JuneHires_logo.png"
+                                        alt=""
+                                        width={30}
+                                        height={30}
+                                        className="object-contain"
+                                        style={{ display: "block", margin: "0 auto", padding: 4 }}
+                                    />
                                 </div>
                                 <div className="li-card-meta">
                                     <span className="li-card-name">JuneHires</span>

@@ -39,7 +39,7 @@ export default function Roles() {
                                 </div>
                                 <h3
                                     className="text-white font-bold text-sm lg:text-base mb-2 group-hover:text-[#F5A623] transition-colors duration-300"
-                                    style={{ fontFamily: "Syne, sans-serif" }}
+                                    style={{ fontFamily: "var(--font-syne), sans-serif" }}
                                 >
                                     {role.title}
                                 </h3>
@@ -65,11 +65,11 @@ export default function Roles() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     className="text-center text-[#6A6A85] text-sm mt-8"
                 >
-                    Don't see your role? No problem —{" "}
+                    Don&apos;t see your role? No problem —{" "}
                     <a href="#contact" className="text-[#F5A623] hover:underline font-medium">
                         tell us what you need
                     </a>{" "}
-                    and we'll find the right fit.
+                    and we&apos;ll find the right fit.
                 </motion.p>
             </div>
         </section>

@@ -44,7 +44,7 @@ function AnimatedCounter({
 
 const testimonialFeature = {
     quote:
-        "HireUA made it easy to hire our video editor. They provided four excellent prospects and we seamlessly hired in under 2 weeks. He has been an incredible addition.",
+        "JuneHires made it easy to hire our video editor. They provided four excellent prospects and we seamlessly hired in under 2 weeks. He has been an incredible addition.",
     name: "David T.",
     company: "Visibly Marketing",
 };
@@ -81,7 +81,7 @@ export default function Stats() {
 
                                 <div
                                     className="text-3xl lg:text-5xl font-bold text-[#F5A623] mb-2"
-                                    style={{ fontFamily: "Syne, sans-serif" }}
+                                    style={{ fontFamily: "var(--font-syne), sans-serif" }}
                                 >
                                     <AnimatedCounter
                                         value={stat.value}
@@ -104,7 +104,7 @@ export default function Stats() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="mt-10 relative bg-[#13131F] border border-[rgba(245,166,35,0.15)] rounded-2xl p-6 lg:p-8"
                 >
-                    <div className="text-4xl lg:text-5xl text-[#F5A623] opacity-30 mb-3 leading-none">"</div>
+                    <div className="text-4xl lg:text-5xl text-[#F5A623] opacity-30 mb-3 leading-none">&ldquo;</div>
                     <p className="text-[#B4B4CC] text-base lg:text-lg leading-relaxed mb-4 max-w-3xl">
                         {testimonialFeature.quote}
                     </p>

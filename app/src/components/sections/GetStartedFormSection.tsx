@@ -5,7 +5,7 @@
  * Styling: get-started-form-section.css (vanilla CSS, no Tailwind).
  */
 
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState, startTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { GOOGLE_FORM_EMBED_URL, GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 import "./get-started-form-section.css";
@@ -26,11 +26,13 @@ function GetStartedFormSectionInner() {
   // URL: ?type=employer | ?type=candidate
   useEffect(() => {
     const t = searchParams.get("type");
-    if (t === "employer" || t === "employers") {
-      setAudience("employer");
-    } else if (t === "candidate" || t === "candidates") {
-      setAudience("candidate");
-    }
+    startTransition(() => {
+      if (t === "employer" || t === "employers") {
+        setAudience("employer");
+      } else if (t === "candidate" || t === "candidates") {
+        setAudience("candidate");
+      }
+    });
   }, [searchParams]);
 
   const selectAudience = useCallback((next: Audience) => {

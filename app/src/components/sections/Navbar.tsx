@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, startTransition } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,49 +13,47 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const pathname = usePathname();
-
-    // Light-background pages — navbar should always show dark text
-    const isLightPage = ["/careers", "/internships", "/contact", "/about"].includes(pathname);
-    const isScrolled = scrolled || isLightPage;
+    const drawerCloseRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 24);
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-
-    // Close mobile menu on route change
-    useEffect(() => {
-        setMobileOpen(false);
+        startTransition(() => setMobileOpen(false));
     }, [pathname]);
+
+    useEffect(() => {
+        if (!mobileOpen) return;
+        drawerCloseRef.current?.focus();
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setMobileOpen(false);
+        };
+        document.addEventListener("keydown", onKey);
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.removeEventListener("keydown", onKey);
+            document.body.style.overflow = prev;
+        };
+    }, [mobileOpen]);
 
     return (
         <>
-            <header
-                className={`navbar${isScrolled ? " scrolled" : ""}`}
-                style={{ padding: "0 24px" }}
-            >
+            <header className="navbar scrolled" style={{ padding: "0 24px" }}>
                 <div className="container">
                     <div className="nav-inner">
-                        {/* Logo */}
                         <Link href="/" className="nav-logo" id="nav-logo">
                             <span className="nav-logo-plate">
-                                <img
+                                <Image
                                     src="/JuneHires_logo.png"
-                                    alt="JuneHires Logo"
-                                    style={{
-                                        height: "50px",
-                                        width: "auto",
-                                        display: "block",
-                                    }}
+                                    alt="JuneHires"
+                                    width={200}
+                                    height={50}
+                                    priority
+                                    style={{ height: "50px", width: "auto", display: "block" }}
                                 />
                             </span>
                         </Link>
 
-                        {/* Desktop links */}
                         <ul className="nav-links">
                             {navLinks.map((l) => (
                                 <li key={l.label}>
@@ -68,29 +67,34 @@ export default function Navbar() {
                             ))}
                         </ul>
 
-                        {/* Desktop CTAs */}
                         <div
                             style={{ display: "flex", gap: 12, alignItems: "center" }}
                             className="desktop-ctas"
                         >
-                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>Work with us</Link>
-                            <Link href="/careers" className={isScrolled ? "btn btn-outline" : "btn btn-ghost-dark"} id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>For Candidates</Link>
+                            <Link href="/services" className="btn btn-primary" id="nav-hire" style={{ padding: "10px 22px", fontSize: 14 }}>
+                                Work with us
+                            </Link>
+                            <Link href="/careers" className="btn btn-outline" id="nav-find-job" style={{ padding: "10px 22px", fontSize: 14 }}>
+                                For Candidates
+                            </Link>
                         </div>
 
-                        {/* Hamburger */}
                         <button
+                            type="button"
                             id="nav-hamburger"
-                            onClick={() => setMobileOpen(!mobileOpen)}
-                            aria-label="Toggle menu"
+                            onClick={() => setMobileOpen((o) => !o)}
+                            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                            aria-expanded={mobileOpen}
+                            aria-controls="mobile-nav-drawer"
                             style={{
                                 display: "none",
                                 background: "none",
-                                border: isScrolled ? "1.5px solid rgba(28,28,32,0.15)" : "1.5px solid rgba(255,255,255,0.2)",
+                                border: "1.5px solid rgba(28,28,32,0.15)",
                                 borderRadius: 10,
                                 padding: "8px 10px",
                                 cursor: "pointer",
                                 fontSize: 18,
-                                color: isScrolled ? "var(--charcoal)" : "#fff",
+                                color: "var(--charcoal)",
                                 transition: "all 0.35s ease",
                             }}
                             className="hamburger-btn"
@@ -101,9 +105,9 @@ export default function Navbar() {
                 </div>
             </header>
 
-            {/* Mobile drawer */}
             {mobileOpen && (
                 <div
+                    role="presentation"
                     style={{
                         position: "fixed",
                         inset: 0,
@@ -112,8 +116,13 @@ export default function Navbar() {
                         backdropFilter: "blur(6px)",
                     }}
                     onClick={() => setMobileOpen(false)}
+                    onKeyDown={(e) => e.key === "Escape" && setMobileOpen(false)}
                 >
                     <div
+                        id="mobile-nav-drawer"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="mobile-nav-title"
                         onClick={(e) => e.stopPropagation()}
                         style={{
                             position: "absolute",
@@ -129,14 +138,34 @@ export default function Navbar() {
                             boxShadow: "-8px 0 40px rgba(28,28,32,0.15)",
                         }}
                     >
+                        <h2 id="mobile-nav-title" className="sr-only">
+                            Site navigation
+                        </h2>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <img src="/JuneHires_logo.png" alt="JuneHires Logo" style={{ height: "46px", width: "auto" }} />
+                            <Image
+                                src="/JuneHires_logo.png"
+                                alt=""
+                                width={184}
+                                height={46}
+                                style={{ height: "46px", width: "auto" }}
+                            />
                             <button
+                                ref={drawerCloseRef}
+                                type="button"
                                 onClick={() => setMobileOpen(false)}
-                                style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "var(--text-mid)" }}
-                            >✕</button>
+                                aria-label="Close menu"
+                                style={{
+                                    background: "none",
+                                    border: "none",
+                                    fontSize: 20,
+                                    cursor: "pointer",
+                                    color: "var(--text-mid)",
+                                }}
+                            >
+                                ✕
+                            </button>
                         </div>
-                        <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                        <nav aria-label="Primary" style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                             {navLinks.map((l) => (
                                 <Link
                                     key={l.label}
@@ -147,10 +176,10 @@ export default function Navbar() {
                                         borderRadius: 12,
                                         fontSize: 16,
                                         fontWeight: 500,
-                                        color: pathname === l.href ? "var(--blue)" : "var(--text-mid)",
+                                        color: pathname === l.href ? "var(--charcoal)" : "var(--text-mid)",
                                         textDecoration: "none",
                                         transition: "background 0.2s",
-                                        background: pathname === l.href ? "var(--blue-pale)" : "transparent",
+                                        background: pathname === l.href ? "rgba(15, 23, 42, 0.06)" : "transparent",
                                     }}
                                 >
                                     {l.label}
@@ -158,8 +187,12 @@ export default function Navbar() {
                             ))}
                         </nav>
                         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: "auto" }}>
-                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>Work with us</Link>
-                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>For Candidates</Link>
+                            <Link href="/services" className="btn btn-primary" style={{ justifyContent: "center" }}>
+                                Work with us
+                            </Link>
+                            <Link href="/careers" className="btn btn-outline" style={{ justifyContent: "center" }}>
+                                For Candidates
+                            </Link>
                         </div>
                     </div>
                 </div>

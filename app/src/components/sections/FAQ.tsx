@@ -46,7 +46,7 @@ export default function FAQ() {
                                 <span
                                     className={`font-semibold text-sm lg:text-base transition-colors duration-300 ${openIndex === i ? "text-[#F5A623]" : "text-white"
                                         }`}
-                                    style={{ fontFamily: "Syne, sans-serif" }}
+                                    style={{ fontFamily: "var(--font-syne), sans-serif" }}
                                 >
                                     {faq.q}
                                 </span>

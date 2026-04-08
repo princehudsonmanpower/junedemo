@@ -22,7 +22,7 @@ export default function SectionHeader({
                     {badge}
                 </span>
             )}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                 {highlight ? (
                     <>
                         {titleParts[0]}

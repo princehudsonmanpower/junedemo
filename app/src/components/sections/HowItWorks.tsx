@@ -42,7 +42,7 @@ export default function HowItWorks() {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#F5A623] transition-colors duration-300" style={{ fontFamily: 'Syne, sans-serif' }}>
+                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#F5A623] transition-colors duration-300" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                                         {step.title}
                                     </h3>
                                     <p className="text-[#6A6A85] text-sm leading-relaxed">

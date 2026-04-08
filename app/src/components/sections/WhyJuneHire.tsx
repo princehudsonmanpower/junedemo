@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 
 const values = [
@@ -17,16 +18,19 @@ export default function WhyJuneHires() {
                     {/* ── Photo column ── */}
                     <div className="why-photo-wrap">
                         <div className="why-photo-frame">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src="/rashmi.jpg"
                                 alt="Rashmi — Founder of JuneHires"
+                                fill
+                                sizes="(max-width: 900px) 100vw, 45vw"
+                                className="object-cover"
+                                style={{ objectPosition: "center top" }}
                             />
-                            {/* Subtle blue overlay at bottom */}
+                            {/* Subtle vignette at bottom */}
                             <div style={{
                                 position: "absolute", bottom: 0, left: 0, right: 0,
                                 height: "35%",
-                                background: "linear-gradient(to top, rgba(10,102,194,0.15), transparent)",
+                                background: "linear-gradient(to top, rgba(15,23,42,0.22), transparent)",
                             }} />
                         </div>
 
@@ -41,8 +45,8 @@ export default function WhyJuneHires() {
                             position: "absolute", top: -20, left: -20,
                             width: 80, height: 80,
                             borderRadius: 20,
-                            background: "var(--blue-pale)",
-                            border: "2px solid var(--border-warm)",
+                            background: "rgba(15, 23, 42, 0.06)",
+                            border: "2px solid rgba(15, 23, 42, 0.1)",
                             zIndex: -1,
                         }} />
                     </div>

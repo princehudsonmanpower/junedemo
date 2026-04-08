@@ -32,7 +32,7 @@ export default function PageHero({ eyebrow, title, titleHighlight, subtitle, pri
             <div className="hero-bg-blob-2" />
             <div style={{
                 position: "absolute", inset: 0, zIndex: 0,
-                backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+                backgroundImage: "linear-gradient(rgba(15,23,42,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.06) 1px, transparent 1px)",
                 backgroundSize: "60px 60px",
             }} />
 
@@ -71,11 +71,11 @@ export default function PageHero({ eyebrow, title, titleHighlight, subtitle, pri
                                 ))}
                             {secondaryCta &&
                                 (secondaryCta.href.startsWith("mailto:") ? (
-                                    <a href={secondaryCta.href} className="btn btn-ghost-dark" id="page-hero-secondary-cta">
+                                    <a href={secondaryCta.href} className="btn btn-outline" id="page-hero-secondary-cta">
                                         {secondaryCta.label}
                                     </a>
                                 ) : (
-                                    <Link href={secondaryCta.href} className="btn btn-ghost-dark" id="page-hero-secondary-cta">
+                                    <Link href={secondaryCta.href} className="btn btn-outline" id="page-hero-secondary-cta">
                                         {secondaryCta.label}
                                     </Link>
                                 ))}
