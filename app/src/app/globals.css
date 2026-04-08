@@ -30,6 +30,9 @@
   --shadow-card: 0 2px 20px rgba(15, 23, 42, 0.07);
   --radius-card: 20px;
   --radius-pill: 100px;
+  /* Vertical rhythm: default section padding + tighter “seam” when sections stack */
+  --section-pad-y: 64px;
+  --section-pad-y-seam: 40px;
 }
 
 * {
@@ -76,8 +79,8 @@ main#main-content {
 
 /* Dark Tailwind sections (HowItWorks, Stats, FAQ, Roles): vertical rhythm */
 .section-py {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
 }
 
 /* Gold accent text in SectionHeader / CTABanner (Tailwind blocks) */
@@ -174,7 +177,7 @@ select:focus-visible {
 }
 
 .section-gap {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
 }
 
 .section-gap-sm {
@@ -791,12 +794,12 @@ select:focus-visible {
 
 .page-hero-content {
   max-width: 700px;
-  padding: 80px 0 100px;
+  padding: 80px 0 56px;
 }
 
 /* Services Section */
 .services-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -905,7 +908,7 @@ select:focus-visible {
 
 /* Internship Hub */
 .hub-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--cream);
   position: relative;
   overflow: hidden;
@@ -1040,7 +1043,7 @@ select:focus-visible {
 
 /* Job Board (light) */
 .jobs-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1172,7 +1175,7 @@ select:focus-visible {
 
 /* Why JuneHires */
 .why-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -1319,7 +1322,7 @@ select:focus-visible {
 
 /* Testimonials */
 .testimonials-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--cream);
 }
 
@@ -1735,7 +1738,7 @@ select:focus-visible {
 
 /* ─── NEW: Quick Highlights Grid ─── */
 .quick-highlights {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -1826,7 +1829,7 @@ select:focus-visible {
 
 /* ─── NEW: CTA Section ─── */
 .cta-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: #ffffff; /* Updated to complete white as requested */
   position: relative;
   overflow: hidden;
@@ -1877,8 +1880,38 @@ select:focus-visible {
 
 /* ─── NEW: How It Works / Process ─── */
 .how-it-works-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--cream);
+}
+
+/* Sitewide: soften double-padding seams between stacked major bands in <main> */
+.how-it-works-section:has(+ .how-it-works-section) {
+  padding-bottom: var(--section-pad-y-seam);
+}
+
+.how-it-works-section + .how-it-works-section {
+  padding-top: var(--section-pad-y-seam);
+}
+
+.page-hero + .services-section,
+.page-hero + .hub-section,
+.page-hero + .testimonials-section,
+.page-hero + .get-started-form-section,
+.hero-section + .services-section,
+.services-section + .stats-band,
+.services-section + .quick-highlights,
+.stats-band + .quick-highlights,
+.quick-highlights + .testimonials-section,
+.testimonials-section + .cta-section,
+.jobs-section + .cta-section,
+.why-section + .faq-section,
+.hub-section + .benefits-section,
+.benefits-section + .intern-testimonials-section,
+.intern-testimonials-section + .cta-section,
+.get-started-form-section + .contact-section,
+.services-section + .how-it-works-section,
+.how-it-works-section + .cta-section {
+  padding-top: var(--section-pad-y-seam);
 }
 
 #process-step-02,
@@ -1955,7 +1988,7 @@ select:focus-visible {
 
 /* ─── NEW: Benefits Grid ─── */
 .benefits-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -2008,7 +2041,7 @@ select:focus-visible {
 
 /* ─── NEW: Intern Testimonials ─── */
 .intern-testimonials-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--cream);
 }
 
@@ -2020,7 +2053,7 @@ select:focus-visible {
 
 /* ─── NEW: Mission Section ─── */
 .mission-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--cream);
 }
 
@@ -2074,7 +2107,7 @@ select:focus-visible {
 
 /* ─── NEW: FAQ Section ─── */
 .faq-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -2159,7 +2192,7 @@ select:focus-visible {
 
 /* ─── NEW: Contact Section ─── */
 .contact-section {
-  padding: 96px 0;
+  padding: var(--section-pad-y) 0;
   background: var(--warm-white);
 }
 
@@ -2323,6 +2356,11 @@ select:focus-visible {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --section-pad-y: 48px;
+    --section-pad-y-seam: 32px;
+  }
+
   .hero-h1 {
     font-size: 36px;
   }
@@ -2373,7 +2411,7 @@ select:focus-visible {
   }
 
   .page-hero-content {
-    padding: 60px 0 80px;
+    padding: 60px 0 48px;
   }
 
   .page-hero {
@@ -2388,7 +2426,7 @@ select:focus-visible {
 /* ── LinkedIn Feed Section (light — careers / job board) ─────── */
 .li-section {
   background: #ffffff;
-  padding: 64px 0;
+  padding: var(--section-pad-y) 0;
 }
 
 /* Top bar */

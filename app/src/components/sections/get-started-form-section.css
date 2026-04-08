@@ -4,7 +4,7 @@
  */
 
 .get-started-form-section {
-  padding: 72px 0 96px;
+  padding: var(--section-pad-y, 64px) 0;
   background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
   animation: get-started-fade-in 0.55s ease-out both;
 }
