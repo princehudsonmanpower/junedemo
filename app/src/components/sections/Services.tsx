@@ -10,7 +10,7 @@ const services = [
         tagClass: "tag-amber",
         title: "Talent Acquisition",
         description:
-            "We source, screen, and deliver exceptional candidates tailored to your organisation's culture and needs — so you only meet the right people.",
+            "We source, screen, and deliver exceptional candidates tailored to your organisation's culture and needs - so you only meet the right people.",
         features: [
             "End-to-end recruitment management",
             "Role-specific candidate screening",
