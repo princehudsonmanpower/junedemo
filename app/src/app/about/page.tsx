@@ -81,7 +81,7 @@ export default function AboutPage() {
 
                     <div className="faq-list">
                         {faqs.map((faq, i) => (
-                            <details key={i} className="faq-item" id={`faq-${i}`}>
+                            <details key={i} className="faq-item" id={`faq-${i}`} name="about-faq">
                                 <summary className="faq-question">
                                     <span>{faq.q}</span>
                                     <span className="faq-toggle">+</span>
