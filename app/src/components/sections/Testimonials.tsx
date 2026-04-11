@@ -12,9 +12,10 @@ interface TestimonialRecord {
     name: string;
     role: string;
     initial: string;
-    /** Public URL (e.g. `/testimonials/avatars/mayuri-shrimal.webp`). Defaults to `/testimonials/avatars/{id}.png`. */
-    avatar?: string;
 }
+
+/** One image for every testimonial card (`public/user-avtar.png`). */
+const TESTIMONIAL_SHARED_AVATAR_SRC = "/user-avtar.png";
 
 const testimonials: TestimonialRecord[] = [
     {
@@ -172,42 +173,22 @@ function Stars({ count }: { count: number }) {
     );
 }
 
-function testimonialPhotoSrc(entry: Pick<TestimonialRecord, "id" | "avatar">): string {
-    return entry.avatar ?? `/testimonials/avatars/${entry.id}.png`;
-}
-
-function TestimonialAvatar({
-    id,
-    name,
-    initial,
-    avatar,
-}: Pick<TestimonialRecord, "id" | "name" | "initial" | "avatar">) {
-    const src = testimonialPhotoSrc({ id, avatar });
-    const [usePhoto, setUsePhoto] = useState(true);
-
-    useEffect(() => {
-        setUsePhoto(true);
-    }, [id, src]);
-
-    if (!usePhoto) {
-        return <div className="testimonial-avatar">{initial}</div>;
-    }
-
+function TestimonialAvatar() {
     return (
-        <div className="testimonial-avatar testimonial-avatar--photo">
+        <div className="testimonial-avatar testimonial-avatar--photo testimonial-avatar--shared">
             <Image
-                src={src}
-                alt={`${name}`}
+                src={TESTIMONIAL_SHARED_AVATAR_SRC}
+                alt=""
+                aria-hidden
                 fill
                 sizes="46px"
                 className="testimonial-avatar__img"
-                onError={() => setUsePhoto(false)}
             />
         </div>
     );
 }
 
-function TestimonialCardBody({ id, text, name, role, initial, stars, avatar, featuredReadMore }: TestimonialCardBodyProps) {
+function TestimonialCardBody({ text, name, role, stars, featuredReadMore }: TestimonialCardBodyProps) {
     const isLong = isLongerThanWords(text, FEATURED_WORD_LIMIT);
     const collapsed = Boolean(featuredReadMore && isLong && !featuredReadMore.expanded);
     const displayText = collapsed ? takeFirstWords(text, FEATURED_WORD_LIMIT) : text;
@@ -237,7 +218,7 @@ function TestimonialCardBody({ id, text, name, role, initial, stars, avatar, fea
                 </p>
             </div>
             <div className="testimonial-author">
-                <TestimonialAvatar id={id} name={name} initial={initial} avatar={avatar} />
+                <TestimonialAvatar />
                 <div>
                     <p className="testimonial-name">{name}</p>
                     <p className="testimonial-role">{role}</p>

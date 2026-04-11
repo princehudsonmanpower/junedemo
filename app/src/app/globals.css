@@ -1478,6 +1478,10 @@ select:focus-visible {
   object-fit: cover;
 }
 
+.testimonial-avatar--shared .testimonial-avatar__img {
+  object-fit: cover;
+}
+
 .testimonial-name {
   font-weight: 600;
   font-size: 15px;
