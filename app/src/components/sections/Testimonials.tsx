@@ -1,10 +1,22 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, startTransition } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const testimonials = [
+interface TestimonialRecord {
+    id: string;
+    stars: number;
+    text: string;
+    name: string;
+    role: string;
+    initial: string;
+    /** Public URL (e.g. `/testimonials/avatars/mayuri-shrimal.webp`). Defaults to `/testimonials/avatars/{id}.png`. */
+    avatar?: string;
+}
+
+const testimonials: TestimonialRecord[] = [
     {
         id: "mayuri-shrimal",
         stars: 5,
@@ -141,7 +153,7 @@ function isLongerThanWords(text: string, limit: number): boolean {
     return getWords(text).length > limit;
 }
 
-type TestimonialEntry = (typeof testimonials)[0];
+type TestimonialEntry = TestimonialRecord;
 
 type TestimonialCardBodyProps = TestimonialEntry & {
     featuredReadMore?: {
@@ -160,7 +172,42 @@ function Stars({ count }: { count: number }) {
     );
 }
 
-function TestimonialCardBody({ text, name, role, initial, stars, featuredReadMore }: TestimonialCardBodyProps) {
+function testimonialPhotoSrc(entry: Pick<TestimonialRecord, "id" | "avatar">): string {
+    return entry.avatar ?? `/testimonials/avatars/${entry.id}.png`;
+}
+
+function TestimonialAvatar({
+    id,
+    name,
+    initial,
+    avatar,
+}: Pick<TestimonialRecord, "id" | "name" | "initial" | "avatar">) {
+    const src = testimonialPhotoSrc({ id, avatar });
+    const [usePhoto, setUsePhoto] = useState(true);
+
+    useEffect(() => {
+        setUsePhoto(true);
+    }, [id, src]);
+
+    if (!usePhoto) {
+        return <div className="testimonial-avatar">{initial}</div>;
+    }
+
+    return (
+        <div className="testimonial-avatar testimonial-avatar--photo">
+            <Image
+                src={src}
+                alt={`${name}`}
+                fill
+                sizes="46px"
+                className="testimonial-avatar__img"
+                onError={() => setUsePhoto(false)}
+            />
+        </div>
+    );
+}
+
+function TestimonialCardBody({ id, text, name, role, initial, stars, avatar, featuredReadMore }: TestimonialCardBodyProps) {
     const isLong = isLongerThanWords(text, FEATURED_WORD_LIMIT);
     const collapsed = Boolean(featuredReadMore && isLong && !featuredReadMore.expanded);
     const displayText = collapsed ? takeFirstWords(text, FEATURED_WORD_LIMIT) : text;
@@ -190,7 +237,7 @@ function TestimonialCardBody({ text, name, role, initial, stars, featuredReadMor
                 </p>
             </div>
             <div className="testimonial-author">
-                <div className="testimonial-avatar">{initial}</div>
+                <TestimonialAvatar id={id} name={name} initial={initial} avatar={avatar} />
                 <div>
                     <p className="testimonial-name">{name}</p>
                     <p className="testimonial-role">{role}</p>
