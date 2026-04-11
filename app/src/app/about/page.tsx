@@ -68,7 +68,7 @@ export default function AboutPage() {
             {/* FAQ Section */}
             <section className="faq-section" id="faq">
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 48px" }}>
+                    <div className="section-intro-block section-intro-block--560">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             FAQ

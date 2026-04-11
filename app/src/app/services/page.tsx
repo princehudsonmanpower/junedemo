@@ -104,7 +104,7 @@ export default function ServicesPage() {
                 style={{ background: "var(--warm-white)" }}
             >
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
+                    <div className="section-intro-block section-intro-block--600 section-intro-block--no-trail">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             HR Retainer
@@ -113,7 +113,7 @@ export default function ServicesPage() {
                             Your embedded HR partner in{" "}
                             <span style={{ color: "var(--amber)" }}>4 focused steps.</span>
                         </h2>
-                        <p className="section-subtitle" style={{ margin: "0 auto 0" }}>
+                        <p className="section-subtitle mx-auto">
                             From foundations to ongoing support - we stay beside you as your people function matures.
                         </p>
                     </div>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
             {/* How It Works - Talent acquisition */}
             <section className="how-it-works-section" id="how-it-works">
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
+                    <div className="section-intro-block section-intro-block--600 section-intro-block--no-trail">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             The Process
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                             Hire your A-player in{" "}
                             <span style={{ color: "var(--amber)" }}>4 simple steps.</span>
                         </h2>
-                        <p className="section-subtitle" style={{ margin: "0 auto 0" }}>
+                        <p className="section-subtitle mx-auto">
                             We do the heavy lifting - from sourcing to screening. You just show up for interviews and pick your favourite.
                         </p>
                     </div>

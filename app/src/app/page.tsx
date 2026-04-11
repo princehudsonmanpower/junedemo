@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* Quick highlights */}
       <section className="quick-highlights">
         <div className="container">
-          <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 56px" }}>
+          <div className="section-intro-block section-intro-block--600">
             <span className="eyebrow" style={{ justifyContent: "center" }}>
               <span className="eyebrow-dot" />
               What We Offer

@@ -81,7 +81,7 @@ export default function InternshipsPage() {
             {/* Additional Benefits */}
             <section className="benefits-section">
                 <div className="container">
-                    <div className="internships-section-heading-block" style={{ margin: "0 auto 56px" }}>
+                    <div className="internships-section-heading-block">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             Why Join Us
@@ -106,7 +106,7 @@ export default function InternshipsPage() {
             {/* Intern Testimonials */}
             <section className="intern-testimonials-section">
                 <div className="container">
-                    <div className="internships-section-heading-block" style={{ margin: "0 auto 48px" }}>
+                    <div className="internships-section-heading-block">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             Intern Stories

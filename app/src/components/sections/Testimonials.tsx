@@ -263,7 +263,7 @@ export default function Testimonials({ limit }: TestimonialsProps) {
         >
             <div className="container">
 
-                <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto" }}>
+                <div className="section-intro-block section-intro-block--560 section-intro-block--no-trail">
                     <span className="eyebrow" style={{ justifyContent: "center" }}>
                         <span className="eyebrow-dot" />
                         Success Stories
@@ -272,7 +272,7 @@ export default function Testimonials({ limit }: TestimonialsProps) {
                         Voices that inspire us<br />
                         <span style={{ color: "var(--amber)" }}>every single day.</span>
                     </h2>
-                    <p className="section-subtitle" style={{ margin: "0 auto" }}>
+                    <p className="section-subtitle mx-auto">
                         Employers who found their people. Candidates who found their path.
                         These are the stories that drive us.
                     </p>
