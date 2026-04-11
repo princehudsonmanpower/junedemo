@@ -23,7 +23,7 @@ export default function Jobs() {
                     </span>
                     <h2 className="section-title">Current Openings</h2>
                     <p className="section-subtitle">
-                        We value attention to detail. Every application step matters — and
+                        We value attention to detail. Every application step matters - and
                         getting it right is your first chance to impress us.
                     </p>
                 </div>
@@ -39,7 +39,7 @@ export default function Jobs() {
                 <div className="jobs-cta-band" style={{ marginTop: 0 }}>
                     <div>
                         <h3>Ready to apply?</h3>
-                        <p>Send your CV to our recruiter — we read every application.</p>
+                        <p>Send your CV to our recruiter - we read every application.</p>
                     </div>
                     <span className="sr-only" aria-live="polite">
                         {copied === "email" ? "Email address copied to clipboard." : ""}

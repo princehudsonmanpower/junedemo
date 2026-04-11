@@ -34,7 +34,7 @@ export default function CTABanner() {
                 </h2>
 
                 <p className="text-[#8A8A9A] text-lg mb-10 leading-relaxed">
-                    Tell us your name, email, and what you need — we&apos;ll follow up fast. Same short
+                    Tell us your name, email, and what you need - we&apos;ll follow up fast. Same short
                     form we use on our contact page.
                 </p>
 

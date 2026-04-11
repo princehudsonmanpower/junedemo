@@ -15,9 +15,9 @@ export default function HomePage() {
         <div className="container">
           <div className="stats-band-inner">
             {[
-              { value: "500+", label: "Candidates Placed" },
+              { value: "50+", label: "Candidates Placed" },
               { value: "100%", label: "Free Internships" },
-              { value: "50+", label: "Companies Trust Us" },
+              { value: "10+", label: "Companies Trust Us" },
               { value: "4.9★", label: "Average Rating" },
             ].map((s) => (
               <div key={s.label} className="stats-band-item">
@@ -86,7 +86,7 @@ export default function HomePage() {
       {/* Featured Testimonials (show only 3) */}
       <Testimonials limit={3} />
 
-      <CTASection />
+      <CTASection recruiterEmailCopy />
     </>
   );
 }

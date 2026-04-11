@@ -20,7 +20,7 @@ export default function WhyJuneHires() {
                         <div className="why-photo-frame">
                             <Image
                                 src="/rashmi.jpg"
-                                alt="Rashmi — Founder of JuneHires"
+                                alt="Rashmi - Founder of JuneHires"
                                 fill
                                 sizes="(max-width: 900px) 100vw, 45vw"
                                 className="object-cover"
@@ -65,7 +65,7 @@ export default function WhyJuneHires() {
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 24 }}>
                             JuneHires was built on one conviction: that hiring done right changes lives.
-                            We combine rigorous talent acquisition with a genuinely personal touch — because
+                            We combine rigorous talent acquisition with a genuinely personal touch - because
                             every placement is a partnership, not just a transaction.
                         </p>
 
@@ -74,11 +74,11 @@ export default function WhyJuneHires() {
                                 Why &ldquo;June&rdquo;?
                             </h3>
                             <p>
-                                Before there was a logo, there was a dog — <strong>June</strong>, the one I loved
+                                Before there was a logo, there was a dog - <strong>June</strong>, the one I loved
                                 most. She was loyalty in a small body: present, patient, and unshakably kind.
                                 When I named this company, I wasn&apos;t thinking of a month on the calendar;
                                 I was carrying her forward. <em>JuneHires</em> is my way of bringing that same
-                                spirit into how we treat people — faithful, warm, and human, every single time.
+                                spirit into how we treat people - faithful, warm, and human, every single time.
                             </p>
                         </aside>
 
@@ -99,14 +99,14 @@ export default function WhyJuneHires() {
                                 fulfilment came from bringing ideas to life through people.
                             </p>
                             <p style={{ marginTop: 16 }}>
-                                I&apos;m Rashmi, and JuneHires is my way of giving back — a space designed to
+                                I&apos;m Rashmi, and JuneHires is my way of giving back - a space designed to
                                 guide, support, and share the lessons I&apos;ve learned. Nothing gives me more
                                 joy than witnessing a professional gain their footing, a student discover their
                                 direction, or a founder build a team they can trust. We are here to grow
                                 alongside you.
                             </p>
                             <div className="why-founder-sig">
-                                — Rashmi, Founder &amp; CEO, JuneHires
+                                - Rashmi, Founder &amp; CEO, JuneHires
                             </div>
                         </div>
 

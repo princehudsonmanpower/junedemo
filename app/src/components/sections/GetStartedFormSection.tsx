@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Get Started — embedded Google Form with Employer / Candidate tabs.
+ * Get Started - embedded Google Form with Employer / Candidate tabs.
  * Styling: get-started-form-section.css (vanilla CSS, no Tailwind).
  */
 
@@ -62,7 +62,7 @@ function GetStartedFormSectionInner() {
         </header>
 
         <p className="get-started-form-note">
-          One short form for everyone—we route your request based on whether you&apos;re hiring or job-seeking.
+          One short form for everyone-we route your request based on whether you&apos;re hiring or job-seeking.
         </p>
 
         <div
@@ -130,7 +130,7 @@ function GetStartedFormSectionInner() {
 
             {/* Same form for both tabs; context copy above personalizes the experience */}
             <iframe
-              title="JuneHires — Get started form"
+              title="JuneHires - Get started form"
               className="get-started-iframe"
               src={GOOGLE_FORM_EMBED_URL}
               onLoad={onIframeLoad}

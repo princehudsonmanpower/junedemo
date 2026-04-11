@@ -1,5 +1,5 @@
 /**
- * Get Started — Google Form embed section
+ * Get Started - Google Form embed section
  * Uses design tokens from globals.css (:root) for consistency with the rest of the site.
  */
 
@@ -67,7 +67,7 @@
   margin: 0 auto 20px;
 }
 
-/* Tab group — toggle */
+/* Tab group - toggle */
 .get-started-tabs {
   display: flex;
   justify-content: center;
@@ -160,7 +160,7 @@
   line-height: 1;
 }
 
-/* Iframe wrapper — responsive; inner scroll controlled by Google */
+/* Iframe wrapper - responsive; inner scroll controlled by Google */
 .get-started-iframe-wrap {
   position: relative;
   width: 100%;

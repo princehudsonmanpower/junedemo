@@ -20,7 +20,7 @@ const posts = [
         tagBg: "rgba(5,118,66,0.12)",
         time: "5d ago",
         content:
-            "80% of jobs are filled through networking — not job boards. Here are 5 things our recruiters look for beyond a great CV. Hint: communication is everything. 🧵",
+            "80% of jobs are filled through networking - not job boards. Here are 5 things our recruiters look for beyond a great CV. Hint: communication is everything. 🧵",
         reactions: "134",
         comments: "27",
     },
@@ -31,7 +31,7 @@ const posts = [
         tagBg: "rgba(178,64,32,0.12)",
         time: "1w ago",
         content:
-            "Our free internship program has helped 100+ candidates land their first HR role. People-first isn't just a tagline — it's how we build every program we run. ✨",
+            "Our free internship program has helped 100+ candidates land their first HR role. People-first isn't just a tagline - it's how we build every program we run. ✨",
         reactions: "211",
         comments: "39",
     },
@@ -72,7 +72,7 @@ export default function LinkedInFeed() {
                                 Follow us for <span className="li-title-accent">insights & openings</span>
                             </h2>
                             <p className="li-subtitle">
-                                Hiring tips, HR trends, and team updates — straight from our feed.
+                                Hiring tips, HR trends, and team updates - straight from our feed.
                             </p>
                         </div>
                     </div>

@@ -24,7 +24,7 @@ const testimonials = [
     {
         id: "t3",
         stars: 5,
-        text: "As a startup founder, I never had time to focus on people strategy. JuneHires' HR Retainer gave us a full HR function from day one. Rashmi's approach is human-first — you can feel it in every interaction.",
+        text: "As a startup founder, I never had time to focus on people strategy. JuneHires' HR Retainer gave us a full HR function from day one. Rashmi's approach is human-first - you can feel it in every interaction.",
         name: "Karan T.",
         role: "Founder, NovaPlex Tech",
         initial: "K",
@@ -32,7 +32,7 @@ const testimonials = [
     {
         id: "t4",
         stars: 5,
-        text: "The resume review service was a game-changer. I had been applying for months with no callbacks. After the JuneHires review — three interviews in one week. I genuinely can't thank them enough.",
+        text: "The resume review service was a game-changer. I had been applying for months with no callbacks. After the JuneHires review - three interviews in one week. I genuinely can't thank them enough.",
         name: "Simran B.",
         role: "Executive Assistant",
         initial: "S",

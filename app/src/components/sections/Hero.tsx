@@ -114,12 +114,12 @@ export default function Hero() {
                         {/* Floating stats cards */}
                         <div className="hero-float-card" style={{ top: 32, left: -24 }}>
                             <p>Companies Trust Us</p>
-                            <strong style={{ fontSize: 15 }}>50+ Clients</strong>
+                            <strong style={{ fontSize: 15 }}>10+ Clients</strong>
                         </div>
 
                         <div className="hero-float-card" style={{ bottom: 56, right: -20 }}>
                             <p>Candidates Placed</p>
-                            <strong style={{ fontSize: 16 }}>500+ Hires</strong>
+                            <strong style={{ fontSize: 16 }}>50+ Hires</strong>
                         </div>
                     </div>
                 </div>

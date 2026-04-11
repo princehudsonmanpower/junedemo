@@ -14,7 +14,7 @@ export default function HowItWorks() {
                     badge="The Process"
                     title="Hire Your A-Player in "
                     highlight="4 Simple Steps"
-                    subtitle="We do the heavy lifting — from sourcing to screening. You just show up for interviews and pick your favourite."
+                    subtitle="We do the heavy lifting - from sourcing to screening. You just show up for interviews and pick your favourite."
                 />
 
                 <div className="relative mt-16">

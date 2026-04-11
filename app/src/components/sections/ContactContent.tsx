@@ -19,7 +19,7 @@ export default function ContactContent() {
                 eyebrow="Get in Touch"
                 title="Let's build something"
                 titleHighlight="great together."
-                subtitle="Whether you need to hire exceptional talent or you're looking for your next career opportunity — we'd love to hear from you."
+                subtitle="Whether you need to hire exceptional talent or you're looking for your next career opportunity - we'd love to hear from you."
             />
 
             <GetStartedFormSection />
@@ -37,7 +37,7 @@ export default function ContactContent() {
                             <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 36 }}>
                                 Whether you&apos;re an employer looking for exceptional talent,
                                 a candidate seeking your next move, or someone interested in our
-                                internship program — reach out. We&apos;re here for all of it.
+                                internship program - reach out. We&apos;re here for all of it.
                             </p>
 
                             {/* Contact cards */}
@@ -112,7 +112,7 @@ export default function ContactContent() {
                             <div className="contact-action-card" id="contact-intern">
                                 <div className="contact-action-icon" aria-hidden="true">✦</div>
                                 <h3>I Want to Learn &amp; Grow</h3>
-                                <p>Apply for our free internship program. No experience needed — just eagerness.</p>
+                                <p>Apply for our free internship program. No experience needed - just eagerness.</p>
                                 <Link href="/internships" className="btn btn-outline" style={{ marginTop: 16, width: "100%", justifyContent: "center" }}>
                                     Explore Internships
                                 </Link>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactContent from "@/components/sections/ContactContent";
 
 export const metadata: Metadata = {
-    title: "Contact Us — Let's Work Together",
+    title: "Contact Us - Let's Work Together",
     description:
         "Get in touch with JuneHires. Whether you're looking to hire exceptional talent or kickstart your career, we'd love to hear from you. Email recruiter@junehires.com.",
     keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         "career consultation",
     ],
     openGraph: {
-        title: "Contact Us — Let's Work Together | JuneHires",
+        title: "Contact Us - Let's Work Together | JuneHires",
         description:
             "Reach out to JuneHires for hiring, internships, or career guidance. We read every message.",
         url: "https://www.junehires.com/contact",

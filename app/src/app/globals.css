@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette — JuneHires Corporate Blue */
+  /* Brand palette - JuneHires Corporate Blue */
   --cream: #ffffff;
   --warm-white: #ffffff;
   --charcoal: #0F172A;
@@ -519,7 +519,7 @@ select:focus-visible {
   text-decoration: none;
 }
 
-/* Light plate behind logo on transparent navbar (dark heroes) — hidden when .navbar.scrolled */
+/* Light plate behind logo on transparent navbar (dark heroes) - hidden when .navbar.scrolled */
 .nav-logo-plate {
   display: inline-flex;
   align-items: center;
@@ -803,6 +803,16 @@ select:focus-visible {
   background: var(--warm-white);
 }
 
+.services-section-intro {
+  text-align: center;
+}
+
+.services-section-intro__subtitle {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -815,23 +825,20 @@ select:focus-visible {
   border-radius: 24px;
   padding: 40px;
   border: 1px solid var(--border-soft);
+  border-top-width: 3px;
+  border-top-style: solid;
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--amber), var(--amber-light));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
+.service-card--accent-blue {
+  border-top-color: var(--amber);
+}
+
+.service-card--accent-sage {
+  border-top-color: var(--sage);
 }
 
 .service-card:hover {
@@ -839,30 +846,59 @@ select:focus-visible {
   box-shadow: 0 20px 50px rgba(28, 28, 32, 0.1);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+.service-card-top-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  min-height: 52px;
 }
 
-.service-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+/* Reset inherited body line-height (1.6) - it inflates the tag’s line box and skews flex cross-axis alignment */
+.service-card-top-row .tag {
+  line-height: 1;
+  padding: 10px 18px;
+  align-items: center;
+  align-self: center;
+}
+
+/* Framed mark: pairs with the pill as one “brand + label” control */
+.service-card-mark-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  margin-bottom: 24px;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
-.service-icon-amber {
+.service-card--accent-blue .service-card-mark-wrap {
   background: var(--amber-pale);
+  border: 1px solid var(--border-warm);
 }
 
-.service-icon-sage {
+.service-card--accent-sage .service-card-mark-wrap {
   background: var(--sage-pale);
+  border: 1px solid rgba(107, 143, 113, 0.22);
+}
+
+.service-card-lead-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .service-card h3 {
+  font-family: var(--font-playfair), Georgia, serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--charcoal);
@@ -904,6 +940,11 @@ select:focus-visible {
   font-size: 11px;
   font-weight: 700;
   flex-shrink: 0;
+}
+
+.service-card--accent-sage .service-features li::before {
+  background: var(--sage-pale);
+  color: var(--sage);
 }
 
 /* Internship Hub */
@@ -1257,7 +1298,7 @@ select:focus-visible {
   color: var(--text-dark);
 }
 
-/* Origin of the name — June (founder's dog), /about */
+/* Origin of the name - June (founder's dog), /about */
 .why-june-origin {
   margin: 8px 0 28px;
   padding: 22px 24px;
@@ -1878,6 +1919,120 @@ select:focus-visible {
   font-weight: 500;
 }
 
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cta-actions--email-copy {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions--email-copy .cta-email-field {
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: min(100%, 520px);
+  min-width: 0;
+}
+
+.cta-email-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px 5px 14px;
+  background: rgba(15, 23, 42, 0.045);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.cta-email-code {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cta-copy-email-btn {
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-dm-sans), var(--font-inter), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(10, 102, 194, 0.35);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-copy-email-btn:hover {
+  background: var(--blue-light);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.42);
+}
+
+.cta-copy-email-btn:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+.cta-email-row-outline {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .cta-actions--email-copy {
+    gap: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .cta-actions--email-copy .cta-email-field {
+    padding: 4px 4px 4px 10px;
+    gap: 6px;
+    max-width: min(100%, calc(100vw - 32px - 140px));
+    width: auto;
+    min-width: 0;
+  }
+
+  .cta-email-code {
+    font-size: 12px;
+  }
+
+  .cta-copy-email-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .cta-email-row-outline {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 13px;
+  }
+}
+
 /* ─── NEW: How It Works / Process ─── */
 .how-it-works-section {
   padding: var(--section-pad-y) 0;
@@ -2423,7 +2578,7 @@ select:focus-visible {
   }
 }
 
-/* ── LinkedIn Feed Section (light — careers / job board) ─────── */
+/* ── LinkedIn Feed Section (light - careers / job board) ─────── */
 .li-section {
   background: #ffffff;
   padding: var(--section-pad-y) 0;

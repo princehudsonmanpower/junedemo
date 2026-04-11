@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: "/JuneHires_logo.png",
         width: 1200,
         height: 630,
-        alt: "JuneHires — People-First Hiring & HR Solutions",
+        alt: "JuneHires - People-First Hiring & HR Solutions",
       },
     ],
   },

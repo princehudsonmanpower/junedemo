@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WhyJuneHire from "@/components/sections/WhyJuneHire";
 
 export const metadata: Metadata = {
-    title: "About Us — Our Story & Values",
+    title: "About Us - Our Story & Values",
     description:
         "JuneHires is a people-first hiring agency dedicated to connecting great talent with great companies. Learn about our mission, values, and the team behind every placement.",
     keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "hiring agency story",
     ],
     openGraph: {
-        title: "About Us — Our Story & Values | JuneHires",
+        title: "About Us - Our Story & Values | JuneHires",
         description:
             "People-first hiring done right. Learn about JuneHires' mission, values, and commitment to every client and candidate.",
         url: "https://www.junehires.com/about",
@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         q: "Will they work in my timezone?",
-        a: "Yes — absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process.",
+        a: "Yes - absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process.",
     },
     {
         q: "What happens if I'm not happy with my hire?",

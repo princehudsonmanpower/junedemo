@@ -18,13 +18,13 @@ const features = [
         icon: "✦",
         bg: "var(--blue-pale)",
         title: "Zero Experience Needed",
-        desc: "No prior experience required — just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
+        desc: "No prior experience required - just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
     },
     {
         icon: "✦",
         bg: "var(--sage-pale)",
         title: "Completely Free",
-        desc: "Internship with JuneHires is 100% free — built for HR and EA profiles starting their careers and hungry for real exposure.",
+        desc: "Internship with JuneHires is 100% free - built for HR and EA profiles starting their careers and hungry for real exposure.",
     },
 ];
 
@@ -76,7 +76,7 @@ export default function Hub() {
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.75, marginBottom: 8 }}>
-                            <strong>Internship with JuneHires</strong> is not a generic internship — it&apos;s
+                            <strong>Internship with JuneHires</strong> is not a generic internship - it&apos;s
                             aimed at HR and EA profiles starting their careers. Learn on real work, with
                             mentorship, completely free.
                         </p>

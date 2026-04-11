@@ -61,7 +61,7 @@ export default function Stats() {
                     badge="Results"
                     title="The Numbers "
                     highlight="Speak For Themselves"
-                    subtitle="Real results from real businesses. No fluff — just proof."
+                    subtitle="Real results from real businesses. No fluff - just proof."
                 />
 
                 {/* Stats grid */}

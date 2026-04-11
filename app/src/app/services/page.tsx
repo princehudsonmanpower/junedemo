@@ -6,7 +6,7 @@ import CTASection from "@/components/ui/CTASection";
 import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 export const metadata: Metadata = {
-    title: "Our Services — Talent Acquisition & HR Retainer",
+    title: "Our Services - Talent Acquisition & HR Retainer",
     description:
         "JuneHires offers end-to-end talent acquisition and dedicated HR retainer services. We source, screen, and deliver exceptional candidates tailored to your organisation's needs.",
     keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "hiring partner",
     ],
     openGraph: {
-        title: "Our Services — Talent Acquisition & HR Retainer | JuneHires",
+        title: "Our Services - Talent Acquisition & HR Retainer | JuneHires",
         description:
             "End-to-end recruitment and dedicated HR partnership. From sourcing to onboarding, we handle the people side so you can focus on growth.",
         url: "https://www.junehires.com/services",
@@ -34,13 +34,13 @@ const retainerProcessSteps = [
         num: "01",
         icon: "✦",
         title: "Discovery & scope",
-        desc: "We map your team size, culture, and people priorities — then agree what “great HR” looks like for your stage.",
+        desc: "We map your team size, culture, and people priorities - then agree what “great HR” looks like for your stage.",
     },
     {
         num: "02",
         icon: "✦",
         title: "Policies & compliance",
-        desc: "Handbooks, contracts, and compliant frameworks tailored to how you actually work — not generic templates.",
+        desc: "Handbooks, contracts, and compliant frameworks tailored to how you actually work - not generic templates.",
     },
     {
         num: "03",
@@ -67,7 +67,7 @@ const processSteps = [
         num: "02",
         icon: "✦",
         title: "We Source & Screen",
-        desc: "Our team reviews hundreds of candidates. We reject 95% — so you only meet the best.",
+        desc: "Our team reviews hundreds of candidates. We reject 95% - so you only meet the best.",
     },
     {
         num: "03",
@@ -79,7 +79,7 @@ const processSteps = [
         num: "04",
         icon: "✦",
         title: "Hire & Onboard Fast",
-        desc: "Choose your hire, sign off, and onboard in days — not months. We handle the rest.",
+        desc: "Choose your hire, sign off, and onboard in days - not months. We handle the rest.",
     },
 ];
 
@@ -114,7 +114,7 @@ export default function ServicesPage() {
                             <span style={{ color: "var(--amber)" }}>4 focused steps.</span>
                         </h2>
                         <p className="section-subtitle" style={{ margin: "0 auto 0" }}>
-                            From foundations to ongoing support — we stay beside you as your people function matures.
+                            From foundations to ongoing support - we stay beside you as your people function matures.
                         </p>
                     </div>
 
@@ -141,7 +141,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* How It Works — Talent acquisition */}
+            {/* How It Works - Talent acquisition */}
             <section className="how-it-works-section" id="how-it-works">
                 <div className="container">
                     <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                             <span style={{ color: "var(--amber)" }}>4 simple steps.</span>
                         </h2>
                         <p className="section-subtitle" style={{ margin: "0 auto 0" }}>
-                            We do the heavy lifting — from sourcing to screening. You just show up for interviews and pick your favourite.
+                            We do the heavy lifting - from sourcing to screening. You just show up for interviews and pick your favourite.
                         </p>
                     </div>
 
@@ -179,7 +179,7 @@ export default function ServicesPage() {
             <CTASection
                 titlePrefix="Ready to scale with "
                 titleAccent="world-class talent?"
-                subtitle="Share your name, email, and the services you need — we use the same secure Google Form as on our contact page."
+                subtitle="Share your name, email, and the services you need - we use the same secure Google Form as on our contact page."
                 primaryCta={{ label: "Book Your Free Call", href: GOOGLE_FORM_SHORT_URL }}
                 secondaryCta={{ label: "Email Us Instead", href: "mailto:recruiter@junehires.com" }}
             />

@@ -4,7 +4,7 @@ export const roles = [
     {
         icon: "✦",
         title: "Virtual Assistant",
-        desc: "Admin, scheduling, email management & more — your all-in-one remote support.",
+        desc: "Admin, scheduling, email management & more - your all-in-one remote support.",
         link: "/roles/virtual-assistant",
     },
     {
@@ -34,7 +34,7 @@ export const roles = [
     {
         icon: "✦",
         title: "Graphic Designer",
-        desc: "Brand identity, social media, ads — visuals that stop the scroll.",
+        desc: "Brand identity, social media, ads - visuals that stop the scroll.",
         link: "/roles/graphic-designer",
     },
     {
@@ -85,7 +85,7 @@ export const steps = [
     {
         number: "02",
         title: "We Source & Screen",
-        desc: "Our team reviews hundreds of candidates. We reject 95% — so you only meet the best.",
+        desc: "Our team reviews hundreds of candidates. We reject 95% - so you only meet the best.",
         icon: "✦",
     },
     {
@@ -97,7 +97,7 @@ export const steps = [
     {
         number: "04",
         title: "Hire & Onboard Fast",
-        desc: "Choose your hire, sign off, and onboard in days — not months. We handle the rest.",
+        desc: "Choose your hire, sign off, and onboard in days - not months. We handle the rest.",
         icon: "✦",
     },
 ];
@@ -127,7 +127,7 @@ export const testimonials = [
         stars: 5,
     },
     {
-        quote: "Everyone they gave us has been amazing — they blew my expectations in terms of capability, confidence, and independence on the job.",
+        quote: "Everyone they gave us has been amazing - they blew my expectations in terms of capability, confidence, and independence on the job.",
         name: "James R.",
         company: "LIFT Enrichment",
         role: "Operations Director",
@@ -164,7 +164,7 @@ export const whyItems = [
     {
         icon: "✦",
         title: "Top 1% Only",
-        desc: "We reject 95% of applicants. Every candidate we present has passed our rigorous screening — skills, background, and culture fit.",
+        desc: "We reject 95% of applicants. Every candidate we present has passed our rigorous screening - skills, background, and culture fit.",
     },
     {
         icon: "✦",
@@ -174,7 +174,7 @@ export const whyItems = [
     {
         icon: "✦",
         title: "Replacement Guarantee",
-        desc: "If you're ever unhappy with your hire — for any reason, at any time — we restart the search with no extra fee.",
+        desc: "If you're ever unhappy with your hire - for any reason, at any time - we restart the search with no extra fee.",
     },
     {
         icon: "✦",
@@ -184,7 +184,7 @@ export const whyItems = [
     {
         icon: "✦",
         title: "Global Talent Pool",
-        desc: "We source from Eastern Europe, Latin America, and beyond — ensuring stable infrastructure and strong English communication.",
+        desc: "We source from Eastern Europe, Latin America, and beyond - ensuring stable infrastructure and strong English communication.",
     },
     {
         icon: "✦",
@@ -204,7 +204,7 @@ export const faqs = [
     },
     {
         q: "Will they work in my timezone?",
-        a: "Yes — absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process. You'll never have to worry about time zone mismatch.",
+        a: "Yes - absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process. You'll never have to worry about time zone mismatch.",
     },
     {
         q: "What is the English proficiency like?",
@@ -212,7 +212,7 @@ export const faqs = [
     },
     {
         q: "What happens if I'm not happy with my hire?",
-        a: "We offer a replacement guarantee with no time limitation. If at any point — even a year later — you're not satisfied, we'll restart the search and find you a replacement at no additional search fee.",
+        a: "We offer a replacement guarantee with no time limitation. If at any point - even a year later - you're not satisfied, we'll restart the search and find you a replacement at no additional search fee.",
     },
     {
         q: "Are there any long-term contracts?",
@@ -228,6 +228,6 @@ export const faqs = [
     },
     {
         q: "Are there any hidden fees?",
-        a: "No hidden fees whatsoever. You pay a one-time search fee to initiate the process, then the agreed monthly salary. That's it — fully transparent pricing.",
+        a: "No hidden fees whatsoever. You pay a one-time search fee to initiate the process, then the agreed monthly salary. That's it - fully transparent pricing.",
     },
 ];

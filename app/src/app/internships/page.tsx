@@ -4,9 +4,9 @@ import Hub from "@/components/sections/Hub";
 import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
-    title: "Internship with JuneHires — HR & EA Profiles",
+    title: "Internship with JuneHires - HR & EA Profiles",
     description:
-        "Join JuneHires' free internship program targeted toward aspiring Executive Assistants and HR professionals. Gain hands-on mentorship, expert resume reviews, and real-world experience — completely free.",
+        "Join JuneHires' free internship program targeted toward aspiring Executive Assistants and HR professionals. Gain hands-on mentorship, expert resume reviews, and real-world experience - completely free.",
     keywords: [
         "free internship",
         "executive assistant internship",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         "resume review",
     ],
     openGraph: {
-        title: "Internship with JuneHires — HR & EA Profiles | JuneHires",
+        title: "Internship with JuneHires - HR & EA Profiles | JuneHires",
         description:
             "Zero-cost, hands-on internship targeted toward aspiring EAs and HR professionals starting their careers. Mentorship, resume reviews, and real-world projects.",
         url: "https://www.junehires.com/internships",
@@ -32,7 +32,7 @@ const benefits = [
     {
         icon: "✦",
         title: "Real Project Experience",
-        desc: "Work on live tasks — scheduling, communications, research, and HR operations. Not simulated exercises.",
+        desc: "Work on live tasks - scheduling, communications, research, and HR operations. Not simulated exercises.",
     },
     {
         icon: "✦",
@@ -73,7 +73,7 @@ export default function InternshipsPage() {
                 eyebrow="Start Your Journey"
                 title="Internship with"
                 titleHighlight="JuneHires."
-                subtitle="Not just a general internship — our program is specifically targeted toward HR and EA profiles starting their careers. Gain hands-on mentorship and real-world experience."
+                subtitle="Not just a general internship - our program is specifically targeted toward HR and EA profiles starting their careers. Gain hands-on mentorship and real-world experience."
                 primaryCta={{ label: "Apply for Internship", href: "mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires" }}
                 secondaryCta={{ label: "Get Resume Reviewed", href: "mailto:recruiter@junehires.com?subject=Resume%20Review%20Request" }}
             />
@@ -145,7 +145,7 @@ export default function InternshipsPage() {
             <CTASection
                 titlePrefix="Ready to kickstart "
                 titleAccent="your career?"
-                subtitle="Apply for our free internship program today. No experience required — just bring your curiosity and eagerness to learn."
+                subtitle="Apply for our free internship program today. No experience required - just bring your curiosity and eagerness to learn."
                 primaryCta={{ label: "Apply Now", href: "mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires" }}
                 secondaryCta={{ label: "Browse Jobs", href: "/careers" }}
             />

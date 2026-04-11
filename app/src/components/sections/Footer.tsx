@@ -23,7 +23,7 @@ export default function Footer() {
                             </span>
                         </div>
                         <p>
-                            End-to-end human resource solutions and talent acquisition — built
+                            End-to-end human resource solutions and talent acquisition - built
                             on loyalty, consistency, and a genuine love for people.
                         </p>
                         <p style={{ marginTop: 16 }}>

@@ -4,8 +4,8 @@ import Link from "next/link";
 const services = [
     {
         id: "talent-acquisition",
-        icon: "✦",
-        iconClass: "service-icon-amber",
+        accent: "blue" as const,
+        markSrc: "/junehire-work-with-us.png",
         tag: "Work with us",
         tagClass: "tag-amber",
         title: "Talent Acquisition",
@@ -21,8 +21,8 @@ const services = [
     },
     {
         id: "hr-retainer",
-        icon: "✦",
-        iconClass: "service-icon-sage",
+        accent: "sage" as const,
+        markSrc: "/junehire-partnership.png",
         tag: "Partnership",
         tagClass: "tag-sage",
         title: "HR Retainer Services",
@@ -44,29 +44,39 @@ export default function Services() {
             <div className="container">
 
                 {/* Header */}
-                <div style={{ maxWidth: 600 }}>
+                <div className="services-section-intro">
                     <span className="eyebrow">
                         <span className="eyebrow-dot" />
                         Services for Employers
                     </span>
                     <h2 className="section-title">
-                        Human-centred solutions<br />
+                        Human-centred solutions{" "}
                         <span style={{ color: "var(--amber)" }}>built for growth.</span>
                     </h2>
-                    <p className="section-subtitle">
-                        Whether you need to fill a critical role or build an entire HR
-                        function from scratch, JuneHires is your end-to-end people partner.
+                    <p className="section-subtitle services-section-intro__subtitle">
+                        Whether you need to fill a critical role or build an entire HR function from scratch, JuneHires is your end-to-end people partner.
                     </p>
                 </div>
 
                 {/* Service cards */}
                 <div className="services-grid">
                     {services.map((s) => (
-                        <div key={s.id} className="service-card" id={`service-${s.id}`}>
-                            <div className={`service-icon ${s.iconClass}`}>{s.icon}</div>
-                            <span className={`tag ${s.tagClass}`} style={{ marginBottom: 16, display: "inline-flex" }}>
-                                {s.tag}
-                            </span>
+                        <div
+                            key={s.id}
+                            className={`service-card service-card--accent-${s.accent}`}
+                            id={`service-${s.id}`}
+                        >
+                            <div className="service-card-top-row">
+                                <div className="service-card-mark-wrap" aria-hidden>
+                                    <img
+                                        src={s.markSrc}
+                                        alt=""
+                                        className="service-card-lead-mark"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <span className={`tag ${s.tagClass}`}>{s.tag}</span>
+                            </div>
                             <h3>{s.title}</h3>
                             <p>{s.description}</p>
                             <ul className="service-features">
