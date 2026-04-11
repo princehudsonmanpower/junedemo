@@ -161,7 +161,7 @@ export default function LinkedInFeed() {
                         </div>
                         <div>
                             <p className="li-bottom-title">Never miss an update</p>
-                            <p className="li-bottom-sub">Join 500+ professionals following JuneHires on LinkedIn.</p>
+                            <p className="li-bottom-sub">Joined 9000+ professionals following JuneHires on LinkedIn.</p>
                         </div>
                         <a
                             href="https://www.linkedin.com/company/junehires"

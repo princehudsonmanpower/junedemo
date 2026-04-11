@@ -74,8 +74,6 @@ export default function InternshipsPage() {
                 title="Internship with"
                 titleHighlight="JuneHires."
                 subtitle="Not just a general internship - our program is specifically targeted toward HR and EA profiles starting their careers. Gain hands-on mentorship and real-world experience."
-                primaryCta={{ label: "Apply for Internship", href: "mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires" }}
-                secondaryCta={{ label: "Get Resume Reviewed", href: "mailto:recruiter@junehires.com?subject=Resume%20Review%20Request" }}
             />
 
             <Hub />
@@ -83,14 +81,13 @@ export default function InternshipsPage() {
             {/* Additional Benefits */}
             <section className="benefits-section">
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 56px" }}>
+                    <div className="internships-section-heading-block" style={{ margin: "0 auto 56px" }}>
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             Why Join Us
                         </span>
                         <h2 className="section-title">
-                            More than just{" "}
-                            <span style={{ color: "var(--amber)" }}>an internship.</span>
+                            More than just <span style={{ color: "var(--amber)" }}>an internship.</span>
                         </h2>
                     </div>
 
@@ -109,14 +106,13 @@ export default function InternshipsPage() {
             {/* Intern Testimonials */}
             <section className="intern-testimonials-section">
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 48px" }}>
+                    <div className="internships-section-heading-block" style={{ margin: "0 auto 48px" }}>
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             Intern Stories
                         </span>
                         <h2 className="section-title">
-                            From interns to{" "}
-                            <span style={{ color: "var(--amber)" }}>professionals.</span>
+                            From interns to <span style={{ color: "var(--amber)" }}>professionals.</span>
                         </h2>
                     </div>
 
