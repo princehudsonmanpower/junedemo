@@ -1258,7 +1258,7 @@ select:focus-visible {
   align-items: start;
 }
 
-/* Founder portrait stacked above June paw collage — /about left rail */
+/* Founder portrait stacked above June paw collage - /about left rail */
 .why-visual-cluster {
   display: flex;
   flex-direction: column;
@@ -1401,7 +1401,7 @@ select:focus-visible {
   font-size: 15px;
 }
 
-/* Paw collage — 4 oval toes in an arc + large main pad (embedded in /about or standalone) */
+/* Paw collage - 4 oval toes in an arc + large main pad (embedded in /about or standalone) */
 .paw-print {
   position: relative;
   z-index: 1;
@@ -1543,7 +1543,7 @@ select:focus-visible {
   inset: 0;
 }
 
-/* Four toes in an arc — stack above palm so captions are never covered */
+/* Four toes in an arc - stack above palm so captions are never covered */
 .paw-print__pad--t1 {
   left: 0;
   top: 8%;
@@ -1596,7 +1596,7 @@ select:focus-visible {
   }
 }
 
-/* Paw collage on light / transparent rail — readable captions & soft frames */
+/* Paw collage on light / transparent rail - readable captions & soft frames */
 .why-paw-card .paw-print {
   width: 100%;
   max-width: min(100%, 440px);
@@ -1763,7 +1763,7 @@ select:focus-visible {
   color: var(--text-soft);
 }
 
-/* Testimonials carousel (home + /testimonials) — 3-up focus layout */
+/* Testimonials carousel (home + /testimonials) - 3-up focus layout */
 .testimonials-carousel {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;

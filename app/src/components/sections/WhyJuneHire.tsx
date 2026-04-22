@@ -88,7 +88,7 @@ export default function WhyJuneHires() {
                             <p>Before there was a logo, there was a dog named June.</p>
                             <p style={{ marginTop: 12 }}>
                                 People often assume I named my company after a month on the calendar, but the truth
-                                is much more personal. June is my constant—a small, soulful boy who defines what
+                                is much more personal. June is my constant-a small, soulful boy who defines what
                                 loyalty looks like to me. He is present when things are chaotic, patient when I am
                                 overwhelmed, and unshakably kind to everyone he meets.
                             </p>
@@ -120,7 +120,7 @@ export default function WhyJuneHires() {
                                 just hire; we grow alongside you.
                             </p>
                             <div className="why-founder-sig">
-                                — Rashmi Singh, Founder &amp; CEO, JuneHires
+                                - Rashmi Singh, Founder &amp; CEO, JuneHires
                             </div>
                         </div>
 
