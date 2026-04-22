@@ -1,13 +1,6 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-
-const values = [
-    { emoji: "✦", label: "Loyalty" },
-    { emoji: "✦", label: "Consistency" },
-    { emoji: "✦", label: "Partnership" },
-    { emoji: "✦", label: "Growth" },
-];
+import AboutPawCollage from "@/components/sections/AboutPawCollage";
 
 export default function WhyJuneHires() {
     return (
@@ -15,43 +8,58 @@ export default function WhyJuneHires() {
             <div className="container">
                 <div className="why-inner">
 
-                    {/* ── Photo column ── */}
-                    <div className="why-photo-wrap">
-                        <div className="why-photo-frame">
-                            <Image
-                                src="/rashmi.jpg"
-                                alt="Rashmi - Founder of JuneHires"
-                                fill
-                                sizes="(max-width: 900px) 100vw, 45vw"
-                                className="object-cover"
-                                style={{ objectPosition: "center top" }}
+                    <div className="why-visual-cluster">
+                        <div className="why-photo-wrap">
+                            <div className="why-photo-frame">
+                                <Image
+                                    src="/rashmi.jpg"
+                                    alt="Rashmi Singh, Founder and CEO of JuneHires"
+                                    fill
+                                    sizes="(max-width: 900px) 100vw, 38vw"
+                                    className="object-cover"
+                                    style={{ objectPosition: "center top" }}
+                                />
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        height: "35%",
+                                        background: "linear-gradient(to top, rgba(15,23,42,0.22), transparent)",
+                                    }}
+                                />
+                            </div>
+
+                            <div className="why-photo-badge">
+                                <span style={{ fontSize: 20 }}>🏆</span>
+                                <p>
+                                    50+ <br />
+                                    Placements in just 2 years
+                                </p>
+                            </div>
+
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: -20,
+                                    left: -20,
+                                    width: 80,
+                                    height: 80,
+                                    borderRadius: 20,
+                                    background: "rgba(15, 23, 42, 0.06)",
+                                    border: "2px solid rgba(15, 23, 42, 0.1)",
+                                    zIndex: -1,
+                                }}
                             />
-                            {/* Subtle vignette at bottom */}
-                            <div style={{
-                                position: "absolute", bottom: 0, left: 0, right: 0,
-                                height: "35%",
-                                background: "linear-gradient(to top, rgba(15,23,42,0.22), transparent)",
-                            }} />
                         </div>
 
-                        {/* Credibility badge */}
-                        <div className="why-photo-badge">
-                            <span style={{ fontSize: 20 }}>🏆</span>
-                            <p>500+ Successful<br />Placements</p>
+                        <div className="why-paw-card">
+                            <p className="why-paw-card__label">June, frame by frame</p>
+                            <AboutPawCollage />
                         </div>
-
-                        {/* Decorative element */}
-                        <div style={{
-                            position: "absolute", top: -20, left: -20,
-                            width: 80, height: 80,
-                            borderRadius: 20,
-                            background: "rgba(15, 23, 42, 0.06)",
-                            border: "2px solid rgba(15, 23, 42, 0.1)",
-                            zIndex: -1,
-                        }} />
                     </div>
 
-                    {/* ── Content column ── */}
                     <div>
                         <span className="eyebrow">
                             <span className="eyebrow-dot" />
@@ -63,50 +71,56 @@ export default function WhyJuneHires() {
                             <span style={{ color: "var(--blue)" }}>values</span>
                         </h2>
 
+                        <h3 className="why-june-origin-title" style={{ marginBottom: 12 }}>
+                            The Spirit of JuneHires
+                        </h3>
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 24 }}>
-                            JuneHires was built on one conviction: that hiring done right changes lives.
-                            We combine rigorous talent acquisition with a genuinely personal touch - because
-                            every placement is a partnership, not just a transaction.
+                            June isn&apos;t a month; he is my dog, a soulful boy who teaches me every day that
+                            loyalty is everything. I started JuneHires to bring his spirit into the professional
+                            world. Where others see transactions, we see people. We are building a brand that is
+                            just like him: faithful, warm, and human, every single time.
                         </p>
 
-                        <aside className="why-june-origin" aria-labelledby="why-june-title">
-                            <h3 id="why-june-title" className="why-june-origin-title">
-                                Why &ldquo;June&rdquo;?
+                        <aside className="why-june-origin" aria-labelledby="story-behind-name-title">
+                            <h3 id="story-behind-name-title" className="why-june-origin-title">
+                                The Story Behind the Name
                             </h3>
-                            <p>
-                                Before there was a logo, there was a dog - <strong>June</strong>, the one I loved
-                                most. She was loyalty in a small body: present, patient, and unshakably kind.
-                                When I named this company, I wasn&apos;t thinking of a month on the calendar;
-                                I was carrying her forward. <em>JuneHires</em> is my way of bringing that same
-                                spirit into how we treat people - faithful, warm, and human, every single time.
+                            <p>Before there was a logo, there was a dog named June.</p>
+                            <p style={{ marginTop: 12 }}>
+                                People often assume I named my company after a month on the calendar, but the truth
+                                is much more personal. June is my constant—a small, soulful boy who defines what
+                                loyalty looks like to me. He is present when things are chaotic, patient when I am
+                                overwhelmed, and unshakably kind to everyone he meets.
+                            </p>
+                            <p style={{ marginTop: 12 }}>
+                                In founding JuneHires, I am carrying his spirit forward. In an industry that often
+                                feels cold and transactional, we choose to be like June: faithful, warm, and deeply
+                                human, every single time.
                             </p>
                         </aside>
 
-                        {/* Values pills */}
-                        <div className="why-values">
-                            {values.map((v) => (
-                                <span key={v.label} className="why-value-pill">
-                                    {v.emoji} {v.label}
-                                </span>
-                            ))}
-                        </div>
-
-                        {/* Founder's note */}
-                        <div className="why-founder-note">
+                        <div className="why-founder-note" aria-labelledby="meet-rashmi-title">
+                            <h3
+                                id="meet-rashmi-title"
+                                className="why-june-origin-title"
+                                style={{ marginBottom: 16, fontStyle: "normal", position: "relative", zIndex: 1 }}
+                            >
+                                Meet Rashmi Singh: The Heart of JuneHires
+                            </h3>
                             <p>
-                                My career began in the world of R&amp;D, but my true path took shape when I
-                                discovered the power of human connection. I realised that my greatest
-                                fulfilment came from bringing ideas to life through people.
+                                My journey began in R&amp;D, but I soon realized that my true passion isn&apos;t
+                                just building products, it&apos;s building people. I founded JuneHires to bring a
+                                much-needed human touch to recruitment. Named after my dog, June, the company
+                                embodies his daily spirit: unwavering loyalty and kindness.
                             </p>
                             <p style={{ marginTop: 16 }}>
-                                I&apos;m Rashmi, and JuneHires is my way of giving back - a space designed to
-                                guide, support, and share the lessons I&apos;ve learned. Nothing gives me more
-                                joy than witnessing a professional gain their footing, a student discover their
-                                direction, or a founder build a team they can trust. We are here to grow
-                                alongside you.
+                                At a young age, I am dedicated to ensuring no candidate feels like a transaction.
+                                Whether I am guiding a student or helping a founder build their dream team, my
+                                motive is simple: to be as faithful and supportive as June is to me. We don&apos;t
+                                just hire; we grow alongside you.
                             </p>
                             <div className="why-founder-sig">
-                                - Rashmi, Founder &amp; CEO, JuneHires
+                                — Rashmi Singh, Founder &amp; CEO, JuneHires
                             </div>
                         </div>
 
@@ -116,7 +130,6 @@ export default function WhyJuneHires() {
                             </Link>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
