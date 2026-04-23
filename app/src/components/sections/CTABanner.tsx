@@ -56,7 +56,6 @@ export default function CTABanner() {
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#6A6A85]">
-                    <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> No contracts</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> No hidden fees</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> Replacement guarantee</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> Hire in &lt; 7 days</span>

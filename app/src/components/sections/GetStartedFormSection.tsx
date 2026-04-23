@@ -23,16 +23,32 @@ function GetStartedFormSectionInner() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [contextSwitching, setContextSwitching] = useState(false);
 
-  // URL: ?type=employer | ?type=candidate
+  // URL: ?type=employer | ?type=candidate | ?type=internship (internship → candidate tab)
   useEffect(() => {
     const t = searchParams.get("type");
     startTransition(() => {
       if (t === "employer" || t === "employers") {
         setAudience("employer");
-      } else if (t === "candidate" || t === "candidates") {
+      } else if (
+        t === "candidate" ||
+        t === "candidates" ||
+        t === "internship" ||
+        t === "intern"
+      ) {
         setAudience("candidate");
       }
     });
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash !== "#get-started-form") return;
+    const el = document.getElementById("get-started-form");
+    if (!el) return;
+    const scroll = () => el.scrollIntoView({ behavior: "smooth", block: "start" });
+    scroll();
+    const t = window.setTimeout(scroll, 280);
+    return () => window.clearTimeout(t);
   }, [searchParams]);
 
   const selectAudience = useCallback((next: Audience) => {
@@ -48,6 +64,7 @@ function GetStartedFormSectionInner() {
 
   return (
     <section
+      id="get-started-form"
       className="get-started-form-section"
       aria-labelledby="get-started-title"
     >

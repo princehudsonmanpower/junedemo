@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 const features = [
     {
@@ -76,7 +77,7 @@ export default function Hub() {
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.75, marginBottom: 8 }}>
-                            <strong>Internship with JuneHires</strong> is not a generic internship - it&apos;s
+                            Internship with JuneHire is not a generic internship - it&apos;s
                             aimed at HR and EA profiles starting their careers. Learn on real work, with
                             mentorship, completely free.
                         </p>
@@ -100,7 +101,9 @@ export default function Hub() {
 
                         <div style={{ marginTop: 40, display: "flex", gap: 12, flexWrap: "wrap" }}>
                             <a
-                                href="mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires"
+                                href={GOOGLE_FORM_SHORT_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn btn-primary"
                                 id="hub-apply-cta"
                             >

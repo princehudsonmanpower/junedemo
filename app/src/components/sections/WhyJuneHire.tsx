@@ -34,7 +34,7 @@ export default function WhyJuneHires() {
                             <div className="why-photo-badge">
                                 <span style={{ fontSize: 20 }}>🏆</span>
                                 <p>
-                                    50+ <br />
+                                    70+ <br />
                                     Placements in just 2 years
                                 </p>
                             </div>
@@ -75,7 +75,7 @@ export default function WhyJuneHires() {
                             The Spirit of JuneHires
                         </h3>
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.8, marginBottom: 24 }}>
-                            June isn&apos;t a month; he is my dog, a soulful boy who teaches me every day that
+                            June isn&apos;t a month; he is my dog, a gentle boy who teaches me every day that
                             loyalty is everything. I started JuneHires to bring his spirit into the professional
                             world. Where others see transactions, we see people. We are building a brand that is
                             just like him: faithful, warm, and human, every single time.
@@ -88,7 +88,7 @@ export default function WhyJuneHires() {
                             <p>Before there was a logo, there was a dog named June.</p>
                             <p style={{ marginTop: 12 }}>
                                 People often assume I named my company after a month on the calendar, but the truth
-                                is much more personal. June is my constant-a small, soulful boy who defines what
+                                is much more personal. June is my constant-a small, steadfast boy who defines what
                                 loyalty looks like to me. He is present when things are chaotic, patient when I am
                                 overwhelmed, and unshakably kind to everyone he meets.
                             </p>

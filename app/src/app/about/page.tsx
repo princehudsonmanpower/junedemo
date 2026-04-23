@@ -32,7 +32,7 @@ const faqs = [
     },
     {
         q: "How quickly can I hire someone?",
-        a: "Our recruitment team typically presents 3–5 pre-qualified candidates within 5–10 days. 92% of our clients hire from the first shortlist.",
+        a: "Our recruitment team typically presents 3–5 pre-qualified candidates within 5–10 days. 87% of our clients hire from the first shortlist.",
     },
     {
         q: "Will they work in my timezone?",
@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         q: "What happens if I'm not happy with my hire?",
-        a: "We offer a replacement guarantee with no time limitation. If at any point you're not satisfied, we'll restart the search at no additional fee.",
+        a: "We offer a replacement guarantee with one year. If at any point you're not satisfied, we'll restart the search at no additional fee.",
     },
     {
         q: "Are there any long-term contracts?",

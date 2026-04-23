@@ -140,7 +140,7 @@ export default function CTASection({
 
                     {/* Trust signals */}
                     <div className="cta-trust-signals">
-                        {["No contracts", "No hidden fees", "Replacement guarantee"].map((signal) => (
+                        {["No hidden fees", "Replacement guarantee"].map((signal) => (
                             <span key={signal} className="cta-trust-item">
                                 <span style={{ color: "var(--amber)" }}>✓</span> {signal}
                             </span>

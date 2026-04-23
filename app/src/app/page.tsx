@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="stats-band-inner">
             {[
               { value: "50+", label: "Candidates Placed" },
-              { value: "100%", label: "Free Internships" },
+              { value: "100%", label: "Free Internship Training" },
               { value: "10+", label: "Companies Trust Us" },
               { value: "4.9★", label: "Average Rating" },
             ].map((s) => (
