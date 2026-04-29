@@ -1,10 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, startTransition } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, startTransition } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { clientTestimonials, type ClientTestimonialRecord } from "@/lib/client-testimonials";
+import {
+    clientTestimonials,
+    companyFromRole,
+    type ClientTestimonialRecord,
+} from "@/lib/client-testimonials";
 
 /** One image for every testimonial card (`public/user-avtar.png`). */
 const TESTIMONIAL_SHARED_AVATAR_SRC = "/user-avtar.png";
@@ -102,12 +106,45 @@ function TestimonialCardBody({ text, name, role, stars, featuredReadMore }: Test
 
 const AUTO_MS = 5200;
 
+/**
+ * Left/right peek indices so the three visible cards use three different companies when possible.
+ */
+function resolvePeekIndices(
+    items: ClientTestimonialRecord[],
+    companies: string[],
+    i: number
+): { prevIdx: number; nextIdx: number } {
+    const n = items.length;
+    if (n <= 1) return { prevIdx: 0, nextIdx: 0 };
+    if (n === 2) {
+        const other = (i + 1) % 2;
+        return { prevIdx: other, nextIdx: other };
+    }
+    const ci = companies[i];
+    for (let df = 1; df < n; df++) {
+        const ni = (i + df) % n;
+        const cn = companies[ni];
+        if (cn === ci) continue;
+        for (let dg = 1; dg < n; dg++) {
+            const pi = (i - dg + n * 1000) % n;
+            if (pi === ni) continue;
+            const cp = companies[pi];
+            if (cp === ci || cp === cn) continue;
+            return { prevIdx: pi, nextIdx: ni };
+        }
+    }
+    return { prevIdx: (i - 1 + n) % n, nextIdx: (i + 1) % n };
+}
+
 interface TestimonialsProps {
     limit?: number;
 }
 
 export default function Testimonials({ limit }: TestimonialsProps) {
-    const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
+    const displayTestimonials = useMemo(
+        () => (limit ? testimonials.slice(0, limit) : testimonials),
+        [limit]
+    );
     const len = displayTestimonials.length;
     const [index, setIndex] = useState(0);
     const [featuredExpanded, setFeaturedExpanded] = useState(false);
@@ -124,8 +161,14 @@ export default function Testimonials({ limit }: TestimonialsProps) {
         });
     }, []);
 
-    const prevIdx = (index - 1 + len) % len;
-    const nextIdx = (index + 1) % len;
+    const companies = useMemo(
+        () => displayTestimonials.map((t) => companyFromRole(t.role)),
+        [displayTestimonials]
+    );
+    const { prevIdx, nextIdx } = useMemo(
+        () => resolvePeekIndices(displayTestimonials, companies, index),
+        [displayTestimonials, companies, index]
+    );
 
     const go = useCallback(
         (dir: -1 | 1) => {
