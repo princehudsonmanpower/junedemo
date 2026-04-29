@@ -39,17 +39,17 @@ const benefits = [
     {
         icon: "✦",
         title: "Certificate of Completion",
-        desc: "Earn a certificate to showcase on your resume and LinkedIn profile upon internship completion.",
+        desc: "Paid internship - we teach and we pay.",
     },
     {
         icon: "✦",
-        title: "100% Remote",
+        title: "Remote/On-site",
         desc: "Participate from anywhere in the world. All you need is a laptop and a willingness to learn.",
     },
     {
         icon: "✦",
         title: "Network & Connections",
-        desc: "Connect with industry professionals and fellow interns. Build a network that lasts beyond the Internship.",
+        desc: "Connect with industry professionals and fellow interns. Build a network that lasts.",
     },
 ];
 

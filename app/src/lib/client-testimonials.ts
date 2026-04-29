@@ -11,6 +11,13 @@ export interface ClientTestimonialRecord {
     initial: string;
 }
 
+/** Employer / org name from `"Title, Company"` roles (used for carousel uniqueness). */
+export function companyFromRole(role: string): string {
+    const t = role.trim();
+    const i = t.lastIndexOf(",");
+    return i === -1 ? t : t.slice(i + 1).trim();
+}
+
 export const clientTestimonials: ClientTestimonialRecord[] = [
     {
         id: "mayuri-shrimal",
