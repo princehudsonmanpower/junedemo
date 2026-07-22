@@ -141,7 +141,7 @@ export const clientTestimonials: ClientTestimonialRecord[] = [
     },
 ];
 
-/** Shown on /internships — internship and growth paths from the same Success Stories library. */
+/** Shown on /internships - internship and growth paths from the same Success Stories library. */
 export const internshipSpotlightTestimonialIds = ["oshin-jadhwani", "mayuri-shrimal"] as const;
 
 export function getClientTestimonialsByIds(ids: readonly string[]): ClientTestimonialRecord[] {
