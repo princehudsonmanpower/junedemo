@@ -1,8 +1,13 @@
 "use client";
 import { useState } from "react";
 import LinkedInFeed from "@/components/sections/LinkedInFeed";
+import type { FeedPost } from "@/lib/types/feed";
 
-export default function Jobs() {
+type JobsProps = {
+    posts: FeedPost[];
+};
+
+export default function Jobs({ posts }: JobsProps) {
     const [copied, setCopied] = useState<string | null>(null);
 
     const copyEmail = () => {
@@ -31,7 +36,7 @@ export default function Jobs() {
             </div>
 
             {/* LinkedIn feed sits between header and apply CTA */}
-            <LinkedInFeed />
+            <LinkedInFeed posts={posts} />
 
             <div className="container">
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Jobs from "@/components/sections/Jobs";
 import CTASection from "@/components/ui/CTASection";
+import { getOpenJobs, jobToFeedPost } from "@/lib/db/job-queries";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
     title: "Careers & Job Board - Current Openings",
@@ -27,10 +30,13 @@ export const metadata: Metadata = {
     },
 };
 
-export default function CareersPage() {
+export default async function CareersPage() {
+    const jobs = await getOpenJobs();
+    const posts = jobs.map(jobToFeedPost);
+
     return (
         <>
-            <Jobs />
+            <Jobs posts={posts} />
 
             <CTASection
                 titlePrefix="Don't see "

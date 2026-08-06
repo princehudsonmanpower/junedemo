@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter, Playfair_Display, Syne } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -135,12 +133,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
