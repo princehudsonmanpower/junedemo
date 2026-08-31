@@ -48,7 +48,7 @@ const faqs = [
     },
     {
         q: "How does billing work?",
-        a: "We bill you once a month for the employee's salary. You pay us directly, and we handle all international banking and payments to your hire.",
+        a: "Our recruitment fee is 10% of the candidate’s annual CTC, charged as a one-time payment. The invoice is raised after the candidate completes one month with your organization.",
     },
     {
         q: "Can I start part-time and scale up?",
@@ -56,7 +56,7 @@ const faqs = [
     },
     {
         q: "Are there any hidden fees?",
-        a: "No hidden fees whatsoever. You pay a one-time search fee to initiate the process, then the agreed monthly salary. Fully transparent.",
+        a: "No, we maintain complete transparency in our pricing. All charges are communicated and finalized with the company before initiating the hiring process, and are clearly outlined in the contract.",
     },
 ];
 
